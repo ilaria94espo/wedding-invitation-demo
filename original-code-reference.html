@@ -1,0 +1,375 @@
+<!--cosi si scrivono commenti-->
+<!--per creare automaticamente documento basico: 
+MAIUSC + punto esclamativo e poi schiaccio TAB-->
+<!--MAIUSC ALT F per formattare meglio il testo-->
+
+<!DOCTYPE html>
+<html lang="it">   <!--altrimenti ad esempio en per inglese-->
+    
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="A&B">
+    <meta name="description" content="Matrimonio di A&B, tutte le informazioni necessarie.">
+    
+    <!-- ROBOTS - istruzioni per motori di ricerca-->
+    <meta name="robots" content="index, follow" />   <!--index = indicizza la pagina, follow = segui i link della pagina-->
+    <!-- altre opzioni: "noindex, nofollow" o "index, nofollow" o "noindex, follow" -->
+
+    <title>Matrimonio di A&B</title>  <!--titolo della pagina da mostrare nel browser (anche nella ricerca google)-->
+
+    <!--open graph per adattamento ad esempio condivisione su facebook-->
+    <meta 
+        property="og:title" 
+        content="Matrimonio di A&B" 
+    />
+    <meta 
+        property="og:description"
+        content="Tutte le informazioni sul matrimonio di A&B." 
+    />
+    <meta 
+        property="og:image" 
+        content="https://example.com/matrimonio-a&b.jpg" 
+    />
+
+    
+    <!--link al file css con lo stile-->
+    <link rel="stylesheet" href="assets/css/global.css">
+    
+    <!--integrazione java script-->
+    <script src="index.js"></script>
+
+    <!--si puo aggiungere anche un span, che non ha una formattazione predefinita. 
+    ad esempio per inserire elemento java script-->
+  
+    <!--icona della pagina web. bisogna però copiarla nella root del progetto a nello spazio nero a sinistra-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- FAVICON 16x16, 32x32 - Browser classici -->
+    <!--<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+    <!-- FAVICON 180x80 - dispositivi Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- CANONICAL URL - URL principale della pagina (evita contenuti duplicati)-->
+    <link rel="canonical" href="https://example.com/matrimonio-a&b.html" />
+
+    <!-- ALTERNATE - versioni alternative della pagina in altre lingue-->
+    <link rel="alternate" hreflang="en" href="https://example.com/wedding-a&b-en.html" />
+    <link rel="alternate" hreflang="fr" href="https://example.com/marriage-a&b-fr.html" />
+    <link rel="alternate" hreflang="es" href="https://example.com/boda-a&b-es.html" />    
+    <link rel="alternate" hreflang="de" href="https://example.com/hochzeit-a&b-de.html" />
+
+    <!--CSS - fogli di stile-->
+    <!--CSS esterno (raccomandato)-->
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/responsive.css"/>
+
+    <!--CSS da CDN (librerie esterne)-->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    /> 
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>   
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" 
+        rel="stylesheet"
+    /> 
+
+    <!-- PRELOAD carica risorse importanti prima -->
+    <link 
+        rel="preload" 
+        href="/fonts/roboto.woff2"
+        as="font"
+        type="font/woff2"
+        crossorigin
+    />  
+    <link rel="preload" href="/images/hero-image.jpg" as="image" />
+
+    <!-- DNS PREFETCH - prepara connessioni a domini esterni -->
+    <link rel="dns-prefetch" href="//google-analytics.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+    <!-- JAVASCRIPT - script esterni -->
+    <!-- Script che puo essere caricato in modo asincrono -->
+    <script async src="https://www.google-analytics.com/analytics.js"> </script>
+
+    <!-- Script che deve essere caricato ma non blocca il parsing -->
+    <script defer src="js/main.js"></script>
+
+    <!-- Script normale (blocca il parsing - usare solo se necessario nell head)-->
+    <!--<script src="js/critical.js"></script>-->
+
+    <!-- STRUCTURED DATA - dati strutturati per Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Matrimonio di A&B",
+        "startDate": "2024-07-20T15:00",
+        "location": {
+            "@type": "Place",
+            "name": "Chiesa di Santa Maria",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Via del Corso 123",
+                "addressLocality": "Roma",
+                "postalCode": "00100",
+                "addressCountry": "IT"
+            }
+        },
+        "image": [
+            "https://example.com/matrimonio-a&b.jpg"
+        ],
+        "description": "Tutte le informazioni sul matrimonio di A&B.",
+        "offers": {
+            "@type": "Offer",
+            "url": "https://example.com/rsvp.html",
+            "availability": "https://schema.org/InStock",
+            "price": 0,
+            "priceCurrency": "EUR"
+        }
+    } 
+    </script>  
+
+</head>
+    
+
+    <!--per mettere link a un´immagine presa da google ma scaicata e aggiunga alla cartella immagini-->
+<header class="banner">
+    <img src="assets/immagini/bouquet fiori.png" alt="tema fiori e matrimonio" width="400" height="300"> 
+</header>
+
+    <!--per aggiungere audio al sito anche se dispositivo é muted-->
+    <!--<audio controls autoplay loop>
+        <source src="./assets/audio/ElisaAudio.m4a" type="audio/m4a">
+        Il tuo browser non supporta l'elemento audio.
+    </audio>-->
+
+    <!--per aggiungere video-->
+    <video controls loop width="640" height="360" poster="./assets/immagini/bouquet fiori.png">
+        <source src="./assets/video/ElisaVideo.mp4" type="video/mp4">
+        Il tuo browser non supporta l'elemento video.
+    </video>
+
+    <!--vedi video lezione 8 per vedere come inserire sottotitoli video-->
+
+    <!-- per avere collegamenti sugli argomenti e il sito scrolla da solo in giù sull argomento 
+    <a href="#Data e luogo">Vai al paragrafo 1</a>      <link a un paragrafo della stessa pagina>
+    <a href="#Location">Vai al paragrafo 2</a>          <link a un paragrafo della stessa pagina>
+    <a href="#paragrafo3">Vai al paragrafo 3</a>        <link a un paragrafo della stessa pagina>
+    <a href="#paragrafo4">Vai al paragrafo 4</a>        <link a un paragrafo della stessa pagina>
+    <a href="#paragrafo5">Vai al paragrafo 5</a>        <link a un paragrafo della stessa pagina>
+    <a href="#paragrafo6">Vai al paragrafo 6</a>        <link a un paragrafo della stessa pagina>
+    <a href="#paragrafo7">Vai al paragrafo 7</a>        <link a un paragrafo della stessa pagina>
+    <a href="#paragrafo8">Vai al paragrafo 8</a>        <link a un paragrafo della stessa pagina>
+    <a href="#paragrafo9">Vai al paragrafo 9</a>        <link a un paragrafo della stessa pagina>-->
+
+     
+    <!--link che riporta a un´altra pagina-->
+    <!--<a href="cartella_prova/pagina_prova.html">Vai a un'altra pagina</a>-->
+
+
+    <!--titolo della pagina (del contenuto) lo style l´ho impostato con css nell head-->
+    <h1>Matrimonio di A&B</h1>   <!--titolo della pagina (del contenuto)-->
+    
+    <!--navigazione con layout Grid responsive-->
+    <nav class="menu-grid">
+
+    <a href="/informazioni.html" class="card">
+        <h3>Informazioni</h3>
+        <p>Tutte le informazioni sul matrimonio</p>
+    </a>
+
+    <a href="/contatti.html" class="card">
+        <h3>Contatti</h3>
+        <p>Come contattarci</p>
+    </a>
+
+    <a href="/come-arrivare.html" class="card">
+        <h3>Come arrivare</h3>
+        <p>Come raggiungerci</p>
+    </a>
+
+    <a href="/rsvp.html" class="card">
+        <h3>Conferma la presenza</h3>
+        <p>Compila il modulo per confermare</p>
+    </a>
+
+    <a href="/galleria-fotografica.html" class="card">
+        <h3>Galleria fotografica</h3>
+        <p>Le nostre foto</p>
+    </a>
+
+    <a href="/programma-giornata.html" class="card">
+        <h3>Programma della giornata</h3>
+        <p>Scopri il programma</p>
+    </a>
+
+    <a href="/domande-frequenti.html" class="card">
+        <h3>Domande frequenti</h3>
+        <p>Tutto quello che devi sapere</p>
+    </a>
+
+    <a href="/dove-alloggiare.html" class="card">
+        <h3>Dove alloggiare</h3>
+        <p>Dove soggiornare</p>
+    </a>
+
+    <a href="/trasporto-parcheggio.html" class="card">
+        <h3>Trasporto e parcheggio</h3>
+        <p>Informazioni utili</p>
+    </a>
+
+    <a href="/dress-code.html" class="card">
+        <h3>Dress code</h3>
+        <p>Come vestirsi</p>
+    </a>
+
+    <a href="/esplorare-dintorni.html" class="card">
+        <h3>Esplorare i dintorni</h3>
+        <p>Cosa vedere nei dintorni</p>
+    </a>
+
+    <a href="/lista-nozze.html" class="card">
+        <h3>Lista nozze</h3>
+        <p>Informazioni sulla lista nozze</p>
+    </a>
+
+</nav>
+
+
+    <h2>Informazioni</h2>   <!--sottotitolo della pagina-->
+
+    <h3>Data e luogo</h3>   <!--titolo paragrafo-->
+    <p id="data-e-luogo">Il matrimonio si terrà il <time datetime="20-07-2024">20 luglio 2024</time> a Roma, presso la Chiesa di Santa Maria.</p>   <!--paragrafo-->
+
+   
+    <!-- per andare a capo si usa br che sta per break-->
+    <!-- se voglio avere paragrafi piu distanziati creo due paragrafi distinti con p-->
+    <h3>Location</h3>
+    <p id="Location">La cerimonia si svolgerà presso la Chiesa di Santa Maria, situata in Via del Corso 123 a Roma.<br>
+    Il pranzo di nozze si terrà presso il Ristorante "La Dolce Vita", situato in Via Roma 456 a Roma.</p>   <!--paragrafo-->
+    <!--paragrafo-->
+
+    <h3>Paragrafo 3</h3>
+    <p id="paragrafo3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <!-- hr invece crea una riga separatrice -->
+
+    <h3>Paragrafo 4</h3>
+    <p id="paragrafo4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+
+    <h3>Paragrafo 5</h3>
+    <p id="paragrafo5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+    <h3>Paragrafo 6</h3>
+    <p id="paragrafo6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+    <h3>Paragrafo 7</h3>
+    <p id="paragrafo7">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>   
+
+
+    <h3>Paragrafo 8</h3>
+    <p id="paragrafo8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>       
+
+
+    <h3>Paragrafo 9</h3>
+    <p id="paragrafo9">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>   
+
+        
+        <!--per poter mandare mail dal sito-->
+        <!--<a href="mailto:info@miosito.com">Scrivici un'email</a><br>-->
+
+        <!-- Link mail con oggetto-->
+        <!--<a href="mailto:info@miosito.com?subject=Richiesta Supporto">Supporto Tecnico</a>-->
+
+        <!--versione ottimizzata per mandare email (con oggetto, soggetto ecc)
+        <a href="mailto:info@miosito.com?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">
+        Send mail with cc, bcc, subject and body
+        </a>-->
+
+    <h3>Link Telefono</h3>
+    <!-- Link telefono (mobile)-->
+    <a href="tel:+39 3472492739">Chiamaci: +39 3472492739</a><br>
+
+    <!-- Link sms-->
+    <a href="sms:+39 3472492739">Mandaci un sms: +39 3472492739</a><br>
+
+    
+    <!--<h3>Link Download</h3>
+    <a href="documenti/informazioni.pdf" download>Scarica le informazioni principali</a><br> 
+
+
+    <!--ordered list, una lista ordinata-->
+    <ol>   
+        <li>Informazioni sul matrimonio</li>     <!--li = listItem-->
+        <li>Come arrivare:
+            <ul>                                <!--nested list, una lista annidata-->  
+                <li>In auto</li>
+                <li>In treno</li>
+                <li>In aereo</li>
+            </ul>               
+        </li>      
+    </ol>
+
+    <!--per mettere una parola in corsivo:-->
+    <!---<em>questa è una parola in corsivo</em>--->
+
+    <!--per mettere una parola in grassetto:-->
+    <!--<strong>questa è una parola in grassetto</strong>-->
+
+    <!--per mettere una parola in sottolineato:-->
+    <!--<u>questa è una parola in sottolineato</u>-->
+
+    <!--per mettere una parola in barrato:-->
+    <!--<del>questa è una parola in barrato</del>-->
+
+    <!--<i>questa è una parola in corsivo</i>-->
+    <!--<b>questa è una parola in grassetto</b>  <b> = bolt-->
+    <!--<u>questa è una parola in sottolineato</u> (underlined, meglio non usarlo per non scambiarlo con link)-->
+    <!--<mark>questa è una parola in evidenziata</mark>-->
+    <!--<small>questa è una parola in piccolo</small>-->
+    <!--<sup>questa è una parola in apice-->
+    <!--<sub>questa è una parola in pedice</sub>-->
+    <!--<del>questa è una parola in barrato</del>-->
+    <!--<ins>questa è una parola sottolineata</ins>-->
+
+    <!--meglio usare comunque em e strong perche interpretati meglio da motori di ricerca-->
+     
+    <!--<code> per cambiare carattere, se ad esempio dobbiamo scrivere del codice-->
+    <!--<kbd> keyboard, se ad esempio dobbiamo scrivere combinazioni ditasti-->
+    <!--<var> per inserire variabili matematiche-->
+    <!--<pre> si usa per mantenere la formattazione-->
+    <!--per citare ad esempio un titolo: <p> Ho letto <cite>Il nome della Rosa</cite> di Eco.</p>-->
+
+     
+     <!--come inserire hyperlink
+    <a href="https://www.google.com">Google</a>   <!--href = hyper reference, link a google-->
+
+    <!--<a href="https://www.google.com" title="questo è un link a google">link d´esempio con titolo</a>
+    title serve metterlo per ottimizzazione motori di ricerca-->
+
+    <!--per mettere didascalia descrizione foto si usa <figure>, link immagine e poi <figcaption> per la didascalia-->
+
+    <!--<a href="altra-pagina.html">link a altra pagina</a>   link a altra pagina del progetto-->
+
+    <!--<a href="cartella_prova/pagina_prova.html">link a pagina in cartella</a>   link a pagina in cartella-->
+
+</body>
+</html>
