@@ -1,308 +1,265 @@
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#68735A">
-  <meta name="description" content="Invito digitale di Sofia & Luca.">
-  <title>Sofia & Luca — 12 giugno 2027</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#68735A" name="theme-color"/>
+<meta content="Invito digitale di Sofia &amp; Luca." name="description"/>
+<title>Sofia &amp; Luca — 12 giugno 2027</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Montserrat:wght@300;400;500;600&amp;family=Parisienne&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
 </head>
-
 <body>
-  <!-- Opening envelope -->
-  <section class="opening" id="opening" aria-label="Invitation opening">
-    <div class="opening-bg"></div>
-    <div class="music-control opening-music" aria-label="Music">
-      <button id="musicToggleIntro" type="button" aria-label="Attiva musica">♪</button>
-    </div>
-
-    <div class="envelope-scene">
-      <button class="seal-click" id="openInvitationSeal" type="button" aria-label="Open invitation">
-        <span class="seal-click-ring" aria-hidden="true"></span>
-      </button>
-    </div>
-  </section>
-
-  <!-- Main invitation -->
-  <main id="site" class="site hidden">
-    <div class="language-corner">
-      <button id="languageButton" type="button" aria-expanded="false">IT</button>
-      <div id="languageDropdown" class="language-dropdown">
-        <button data-lang="it" type="button">Italiano</button>
-        <button data-lang="en" type="button">English</button>
-        <button data-lang="de" type="button">Deutsch</button>
-        <button data-lang="fr" type="button">Français</button>
-        <button data-lang="es" type="button">Español</button>
-      </div>
-    </div>
-
-    <section class="intro-banner" id="home">
-      <div class="invitation-banner">
-        <div class="invitation-card">
-          <p class="invitation-eyebrow" data-i18n="invitationGreeting"></p>
-          <p class="invitation-title" data-i18n="invitationLine"></p>
-          <div class="invitation-rule"><span>♡</span></div>
-          <h1 id="welcomeNames"></h1>
-          <p class="invitation-date" id="welcomeDate"></p>
-        </div>
-        <div class="couple-photo-slot">
-          <img id="coupleImage" src="" alt="La coppia">
-        </div>
-      </div>
-    </section>
-
-    <section class="topics-section" id="details">
-      <div class="section-heading">
-        <p class="section-kicker" data-i18n="detailsEyebrow"></p>
-        <h2 data-i18n="detailsTitle"></h2>
-        <p data-i18n="detailsSubtitle"></p>
-      </div>
-      <div class="topic-icons-grid">
-        <a class="topic-icon-card" href="#our-day" data-section-flag="schedule">
-          <span class="topic-icon"><i data-lucide="calendar-days"></i></span>
-          <span class="topic-label" data-i18n="schedule"></span>
-        </a>
-        <a class="topic-icon-card" href="#directions" data-section-flag="directions">
-          <span class="topic-icon"><i data-lucide="map-pin"></i></span>
-          <span class="topic-label" data-i18n="directions"></span>
-        </a>
-        <a class="topic-icon-card" href="#accommodation" data-section-flag="accommodation">
-          <span class="topic-icon"><i data-lucide="house"></i></span>
-          <span class="topic-label" data-i18n="accommodation"></span>
-        </a>
-        <a class="topic-icon-card" href="#transport" data-section-flag="transport">
-          <span class="topic-icon"><i data-lucide="car-front"></i></span>
-          <span class="topic-label" data-i18n="transport"></span>
-        </a>
-        <a class="topic-icon-card" href="#dressCode" data-section-flag="dressCode">
-          <span class="topic-icon"><i data-lucide="shirt"></i></span>
-          <span class="topic-label" data-i18n="dressCode"></span>
-        </a>
-        <a class="topic-icon-card" href="#gifts" data-section-flag="gifts">
-          <span class="topic-icon"><i data-lucide="gift"></i></span>
-          <span class="topic-label" data-i18n="gifts"></span>
-        </a>
-        <a class="topic-icon-card" href="#rsvp" data-section-flag="rsvp">
-          <span class="topic-icon"><i data-lucide="glass-water"></i></span>
-          <span class="topic-label" data-i18n="rsvp"></span>
-        </a>
-        <a class="topic-icon-card" href="#memories" data-section-flag="gallery">
-          <span class="topic-icon"><i data-lucide="camera"></i></span>
-          <span class="topic-label" data-i18n="gallery"></span>
-        </a>
-        <a class="topic-icon-card" href="#faq" data-section-flag="faq">
-          <span class="topic-icon"><i data-lucide="circle-help"></i></span>
-          <span class="topic-label" data-i18n="faq"></span>
-        </a>
-        <a class="topic-icon-card" href="#contacts" data-section-flag="contacts">
-          <span class="topic-icon"><i data-lucide="phone"></i></span>
-          <span class="topic-label" data-i18n="contacts"></span>
-        </a>
-        <a class="topic-icon-card" href="#information" data-section-flag="information">
-          <span class="topic-icon"><i data-lucide="info"></i></span>
-          <span class="topic-label" data-i18n="information"></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Macro section: Our day -->
-    <section class="detail-section" id="our-day" data-section-flag="schedule">
-      <div class="section-heading">
-        <p class="section-kicker" data-i18n="ourDay"></p>
-        <h2 data-i18n="schedule"></h2>
-      </div>
-
-      <div class="day-layout">
-        <div class="day-image"><img src="" data-image="ceremony" alt=""></div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <time>16:00</time>
-            <div>
-              <h3 data-i18n="ceremony"></h3>
-              <p id="ceremonyText"></p>
-              <a id="ceremonyMap" class="text-link" target="_blank" rel="noopener" data-i18n="maps"></a>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <time>18:30</time>
-            <div>
-              <h3 data-i18n="reception"></h3>
-              <p id="receptionText"></p>
-              <a id="receptionMap" class="text-link" target="_blank" rel="noopener" data-i18n="maps"></a>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="subgrid">
-        <article class="info-card" id="directions" data-section-flag="directions">
-          <h3 data-i18n="directions"></h3>
-          <p data-i18n="directionsText"></p>
-        </article>
-        <article class="info-card" id="transport" data-section-flag="transport">
-          <h3 data-i18n="transport"></h3>
-          <p data-i18n="transportText"></p>
-        </article>
-        <article class="info-card" id="information" data-section-flag="information">
-          <h3 data-i18n="information"></h3>
-          <p data-i18n="informationText"></p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Macro section: Participate -->
-    <section class="detail-section soft-section" id="participate" data-section-flag="rsvp">
-      <div class="section-heading">
-        <p class="section-kicker" data-i18n="participate"></p>
-        <h2 data-i18n="rsvp"></h2>
-      </div>
-
-      <div class="participate-grid">
-        <form class="rsvp-form" id="rsvp">
-          <label>
-            <span data-i18n="guestName"></span>
-            <input name="name" required>
-          </label>
-          <label>
-            <span data-i18n="attending"></span>
-            <select name="attending" required>
-              <option value="">—</option>
-              <option value="yes" data-i18n="yes"></option>
-              <option value="no" data-i18n="no"></option>
-            </select>
-          </label>
-          <label>
-            <span data-i18n="guests"></span>
-            <input name="guests" type="number" min="1" max="10" value="1">
-          </label>
-          <label>
-            <span data-i18n="dietary"></span>
-            <textarea name="dietary" rows="3"></textarea>
-          </label>
-          <button type="submit" class="primary-button" data-i18n="sendRsvp"></button>
-          <p class="form-note" id="rsvpMessage"></p>
-        </form>
-
-        <div class="contact-panel" id="contacts" data-section-flag="contacts">
-          <h3 data-i18n="contacts"></h3>
-          <p data-i18n="contactsText"></p>
-          <a id="emailLink" class="text-link"></a>
-          <a id="phoneLink" class="text-link"></a>
-          <p class="deadline"><span data-i18n="rsvpDeadline"></span>: <strong data-i18n="deadlineDate"></strong></p>
-        </div>
-      </div>
-
-      <div class="faq" id="faq" data-section-flag="faq">
-        <details>
-          <summary data-i18n="answer1"></summary>
-          <p data-i18n="answer1Text"></p>
-        </details>
-        <details>
-          <summary data-i18n="answer2"></summary>
-          <p data-i18n="answer2Text"></p>
-        </details>
-        <details>
-          <summary data-i18n="answer3"></summary>
-          <p data-i18n="answer3Text"></p>
-        </details>
-      </div>
-    </section>
-
-    <!-- Macro section: Memories -->
-    <section class="detail-section" id="memories" data-section-flag="gallery">
-      <div class="section-heading">
-        <p class="section-kicker" data-i18n="memories"></p>
-        <h2 data-i18n="gallery"></h2>
-      </div>
-
-      <div class="gallery-upload" data-section-flag="gallery">
-        <label class="gallery-upload-box" for="publicGalleryFiles">
-          <span class="upload-icon">＋</span>
-          <strong data-i18n="galleryUploadTitle"></strong>
-          <span data-i18n="galleryUploadText"></span>
-          <small data-i18n="galleryUploadHint"></small>
-        </label>
-        <input id="publicGalleryFiles" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden>
-        <button id="publicGalleryUploadButton" class="primary-button" type="button" data-i18n="galleryUploadButton"></button>
-        <p id="publicGalleryMessage" class="form-note" aria-live="polite"></p>
-      </div>
-      <div class="gallery-grid" id="galleryGrid"></div>
-    </section>
-
-    <!-- Macro section: Useful info -->
-    <section class="detail-section soft-section" id="useful-info">
-      <div class="section-heading">
-        <p class="section-kicker" data-i18n="usefulInfo"></p>
-        <h2 data-i18n="detailsTitle"></h2>
-      </div>
-
-      <div class="subgrid">
-        <article class="info-card" id="accommodation" data-section-flag="accommodation">
-          <h3 data-i18n="accommodation"></h3>
-          <p data-i18n="accommodationText"></p>
-        </article>
-        <article class="info-card" id="dressCode" data-section-flag="dressCode">
-          <h3 data-i18n="dressCode"></h3>
-          <p data-i18n="dressCodeText"></p>
-        </article>
-        <article class="info-card" id="gifts" data-section-flag="gifts">
-          <h3 data-i18n="gifts"></h3>
-          <p data-i18n="giftsText"></p>
-        </article>
-      </div>
-    </section>
-
-    <section class="quote-banner">
-      <img src="" id="landscapeImage" alt="">
-      <div class="quote-overlay"></div>
-      <div class="quote-content">
-        <p data-i18n="quote"></p>
-        <span>♡</span>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-brand">S &amp; L</div>
-      <p data-i18n="footer"></p>
-      <div class="footer-date" id="footerDate"></div>
-    </footer>
-  </main>
-
-  <div class="language-modal hidden" id="languageModal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="languageModalTitle">
-    <div class="language-modal-card">
-      <p class="section-kicker" data-i18n="languageLabel"></p>
-      <h2 id="languageModalTitle" data-i18n="chooseLanguage"></h2>
-      <p data-i18n="chooseLanguageText"></p>
-      <div class="language-choice-grid">
-        <button type="button" data-choice-lang="it" onclick="window.chooseLanguage('it')">Italiano</button>
-        <button type="button" data-choice-lang="en" onclick="window.chooseLanguage('en')">English</button>
-        <button type="button" data-choice-lang="de" onclick="window.chooseLanguage('de')">Deutsch</button>
-        <button type="button" data-choice-lang="fr" onclick="window.chooseLanguage('fr')">Français</button>
-        <button type="button" data-choice-lang="es" onclick="window.chooseLanguage('es')">Español</button>
-      </div>
-    </div>
+<!-- Opening envelope -->
+<section aria-label="Invitation opening" class="opening" id="opening">
+<div class="opening-bg"></div>
+<div class="envelope-scene">
+<button aria-label="Open invitation" class="seal-click" id="openInvitationSeal" type="button">
+<span aria-hidden="true" class="seal-click-ring"></span>
+</button>
+</div>
+</section>
+<!-- Main invitation -->
+<main class="site hidden" id="site">
+<div class="language-corner">
+<button aria-expanded="false" id="languageButton" type="button">IT</button>
+<div class="language-dropdown" id="languageDropdown">
+<button data-lang="it" type="button">Italiano</button>
+<button data-lang="en" type="button">English</button>
+<button data-lang="de" type="button">Deutsch</button>
+<button data-lang="fr" type="button">Français</button>
+<button data-lang="es" type="button">Español</button>
+</div>
+</div>
+<section class="intro-banner" id="home">
+  <div class="header-botanical botanical-left" aria-hidden="true"></div>
+  <div class="header-botanical botanical-right" aria-hidden="true"></div>
+  <div class="wedding-header">
+    <p class="announcement-line" data-i18n="invitationLine">Siamo felici di invitarvi al nostro matrimonio</p>
+    <div class="wedding-names" id="welcomeNames"></div>
+    <div class="wedding-date" id="welcomeDate"></div>
+    <p class="hero-subtitle" data-i18n="heroSubtitle">Insieme, verso la nostra più bella avventura.</p>
   </div>
+</section>
 
-  <audio id="backgroundMusic" loop preload="none">
-    <source src="assets/audio/dusk-till-dawn-violin.mp3" type="audio/mpeg">
-  </audio>
-
-  <div class="lightbox hidden" id="lightbox">
-    <button id="lightboxClose" aria-label="Close" data-i18n-aria="lightboxClose">×</button>
-    <img id="lightboxImage" src="" alt="">
+<section class="program-section" id="program" data-section-flag="schedule">
+  <div class="program-heading">
+    <p class="section-kicker" data-i18n="ourDay"></p>
+    <h2 data-i18n="schedule"></h2>
+        <div class="program-divider" aria-hidden="true"><span></span><b>♡</b><span></span></div>
   </div>
+  <div class="program-timeline-horizontal">
+    <article class="program-event">
+      <div class="program-art"><img src="assets/images/program-watercolor.jpg" alt="" /></div>
+      <time>16:00</time>
+      <h3 data-i18n="ceremony"></h3>
+      <p id="ceremonyText"></p>
+      <a class="text-link" data-i18n="maps" id="ceremonyMap" rel="noopener" target="_blank"></a>
+    </article>
+    <span class="program-connector" aria-hidden="true">♡</span>
+    <article class="program-event">
+      <div class="program-art"><img src="assets/images/timeline-champagne.png" alt="" /></div>
+      <time>18:30</time>
+      <h3 data-i18n="Aperitivo">Aperitivo</h3>
+      <p>Villa Rosengarten<br>Innsbruck</p>
+    </article>
+    <span class="program-connector" aria-hidden="true">♡</span>
+    <article class="program-event">
+      <div class="program-art"><img src="assets/images/accommodation-watercolor.jpg" alt="" /></div>
+      <time>20:00</time>
+      <h3 data-i18n="reception"></h3>
+      <p>Villa Rosengarten<br>Innsbruck</p>
+      <a class="text-link" data-i18n="maps" id="receptionMap" rel="noopener" target="_blank"></a>
+    </article>
+    <span class="program-connector" aria-hidden="true">♡</span>
+    <article class="program-event">
+      <div class="program-art"><img src="assets/images/cake-watercolor.jpg" alt="" /></div>
+      <time>00:00</time>
+      <h3 data-i18n="cake"></h3>
+      <p data-i18n="cakeText"></p>
+    </article>
+  </div>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/event-config.js"></script>
-  <script src="js/translations.js"></script>
-  <script src="js/supabase-config.js"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="js/main.js"></script>
+<section class="topics-section" id="details">
+<div aria-label="Controllo musica" class="main-music-control music-control">
+<button aria-label="Avvia musica" aria-pressed="false" class="music-switch" id="musicToggleMain" title="Avvia musica" type="button">
+<span aria-hidden="true" class="music-switch-icon">♫</span>
+<span class="music-switch-label">Musica</span>
+<span aria-hidden="true" class="music-switch-toggle"><span class="music-toggle-thumb"></span></span>
+<span aria-hidden="true" class="music-switch-status">OFF</span>
+</button>
+</div>
+<div class="section-heading">
+<h2 data-i18n="detailsTitle"></h2>
+<p data-i18n="detailsSubtitle">Tutte le informazioni del nostro giorno, raccolte in un unico posto.</p>
+</div>
+<div class="topic-icons-grid">
+<a class="topic-icon-card" data-section-flag="schedule" href="#program"><span class="topic-icon" aria-hidden="true"><img class="topic-drawing-img" src="assets/images/program-watercolor.jpg" alt=""></span><span class="topic-label" data-i18n="schedule"></span></a>
+<a class="topic-icon-card" data-section-flag="directions" href="#detail-directions"><span class="topic-icon" aria-hidden="true"><img class="topic-drawing-img" src="assets/images/directions-watercolor.jpg" alt=""></span><span class="topic-label" data-i18n="directions"></span></a>
+<a class="topic-icon-card" data-section-flag="accommodation" href="#detail-accommodation"><span class="topic-icon" aria-hidden="true"><img class="topic-drawing-img" src="assets/images/accommodation-watercolor.jpg" alt=""></span><span class="topic-label" data-i18n="accommodation"></span></a>
+<a class="topic-icon-card" data-section-flag="dressCode" href="#detail-dressCode"><span class="topic-icon" aria-hidden="true"><img class="topic-drawing-img" src="assets/images/dress-watercolor.jpg" alt=""></span><span class="topic-label" data-i18n="dressCode"></span></a>
+<a class="topic-icon-card" data-section-flag="gifts" href="#detail-gifts"><span class="topic-icon" aria-hidden="true"><img class="topic-drawing-img" src="assets/images/gifts-watercolor.jpg" alt=""></span><span class="topic-label" data-i18n="gifts"></span></a>
+<a class="topic-icon-card" data-section-flag="rsvp" href="#detail-rsvp"><span class="topic-icon" aria-hidden="true"><img class="topic-drawing-img" src="assets/images/rsvp-watercolor.jpg" alt=""></span><span class="topic-label" data-i18n="rsvp"></span></a>
+<a class="topic-icon-card" data-section-flag="gallery" href="#detail-gallery"><span class="topic-icon" aria-hidden="true"><img class="topic-drawing-img" src="assets/images/gallery-watercolor.jpg" alt=""></span><span class="topic-label" data-i18n="gallery"></span></a>
+<a class="topic-icon-card" data-section-flag="faq" href="#detail-faq"><span class="topic-icon" aria-hidden="true"><img class="topic-drawing-img" src="assets/images/faq-watercolor.jpg" alt=""></span><span class="topic-label" data-i18n="faq"></span></a>
+<a class="topic-icon-card" data-section-flag="contacts" href="#detail-contacts"><span class="topic-icon" aria-hidden="true"><img class="topic-drawing-img" src="assets/images/contacts-watercolor.jpg" alt=""></span><span class="topic-label" data-i18n="contacts"></span></a>
+<a class="topic-icon-card" data-section-flag="information" href="#detail-information"><span class="topic-icon" aria-hidden="true"><img class="topic-drawing-img" src="assets/images/information-watercolor.jpg" alt=""></span><span class="topic-label" data-i18n="information"></span></a>
+</div>
+</section><section aria-live="polite" class="detail-panel-shell" hidden="" id="detail-panel"><div class="detail-panel-inner"></div><div class="detail-panel-content" id="detail-directions" data-detail-key="directions" data-section-flag="directions" hidden=""><div class="detail-simple-content"><h2 data-i18n="directions"></h2>
+
+<p data-i18n="directionsText"></p>
+</div></div><div class="detail-panel-content" id="detail-information" data-detail-key="information" data-section-flag="information" hidden=""><div class="detail-simple-content"><h2 data-i18n="information"></h2>
+
+<p data-i18n="informationText"></p>
+</div></div><div class="detail-panel-content" id="detail-rsvp" data-detail-key="rsvp" data-section-flag="rsvp" hidden=""><div class="section-heading">
+<p class="section-kicker" data-i18n="participate"></p>
+<h2 data-i18n="rsvp"></h2>
+</div><form class="rsvp-form" id="rsvp">
+<label>
+<span data-i18n="guestName"></span>
+<input name="name" required=""/>
+</label>
+<label>
+<span data-i18n="attending"></span>
+<select name="attending" required="">
+<option value="">—</option>
+<option data-i18n="yes" value="yes"></option>
+<option data-i18n="no" value="no"></option>
+</select>
+</label>
+<label>
+<span data-i18n="guests"></span>
+<input max="10" min="1" name="guests" type="number" value="1"/>
+</label>
+<label>
+<span data-i18n="dietary"></span>
+<textarea name="dietary" rows="3"></textarea>
+</label>
+<button class="primary-button" data-i18n="sendRsvp" type="submit"></button>
+<p class="form-note" id="rsvpMessage"></p>
+</form></div><div class="detail-panel-content" id="detail-gallery" data-detail-key="gallery" data-section-flag="gallery" hidden="">
+<div class="section-heading">
+<p class="section-kicker" data-i18n="memories"></p>
+<h2 data-i18n="gallery"></h2>
+</div>
+<div class="gallery-options-row">
+<div class="gallery-option gallery-upload" data-section-flag="gallery">
+<label class="gallery-upload-box" for="publicGalleryFiles">
+<span class="upload-icon">＋</span>
+<strong data-i18n="galleryUploadTitle"></strong>
+<span data-i18n="galleryUploadText"></span>
+<small data-i18n="galleryUploadHint"></small>
+<button class="primary-button gallery-upload-action" data-i18n="galleryUploadButton" id="publicGalleryUploadButton" type="button"></button>
+</label>
+<input accept="image/jpeg,image/png,image/webp" hidden id="publicGalleryFiles" multiple type="file"/>
+<p aria-live="polite" class="form-note" id="publicGalleryMessage"></p>
+</div>
+<div class="gallery-option google-photos-card" id="googlePhotosCard">
+<div class="google-photos-copy">
+<p class="section-kicker">GOOGLE PHOTOS</p>
+<h3 data-i18n="googlePhotosTitle"></h3>
+<p data-i18n="googlePhotosText"></p>
+<a class="primary-button google-photos-button" data-i18n="googlePhotosButton" id="googlePhotosButton" rel="noopener" target="_blank"></a>
+<p class="google-photos-setup-note" data-i18n="googlePhotosSetupNote" id="googlePhotosSetupNote"></p>
+</div>
+<div class="google-photos-qr-wrap">
+<img alt="" id="googlePhotosQr"/>
+<small data-i18n="googlePhotosQr"></small>
+</div>
+</div>
+</div>
+<div class="gallery-grid" id="galleryGrid"></div>
+</div><div class="detail-panel-content" id="detail-faq" data-detail-key="faq" data-section-flag="faq" hidden=""><div class="detail-simple-content"><h2 data-i18n="faq"></h2>
+<details>
+<summary data-i18n="answer1"></summary>
+<p data-i18n="answer1Text"></p>
+</details>
+<details>
+<summary data-i18n="answer2"></summary>
+<p data-i18n="answer2Text"></p>
+</details>
+<details>
+<summary data-i18n="answer3"></summary>
+<p data-i18n="answer3Text"></p>
+</details>
+</div></div><div class="detail-panel-content" id="detail-contacts" data-detail-key="contacts" data-section-flag="contacts" hidden=""><div class="detail-simple-content"><h2 data-i18n="contacts"></h2>
+
+<p data-i18n="contactsText"></p>
+<a class="text-link" id="emailLink"></a>
+<a class="text-link" id="phoneLink"></a>
+<p class="deadline"><span data-i18n="rsvpDeadline"></span>: <strong data-i18n="deadlineDate"></strong></p>
+</div></div><div class="detail-panel-content" id="detail-accommodation" data-detail-key="accommodation" data-section-flag="accommodation" hidden=""><div class="detail-simple-content"><h2 data-i18n="accommodation"></h2>
+
+<p data-i18n="accommodationText"></p>
+</div></div><div class="detail-panel-content" id="detail-dressCode" data-detail-key="dressCode" data-section-flag="dressCode" hidden="">
+<div class="dress-detail-layout">
+  <div class="dress-detail-copy">
+    <p class="section-kicker">IL NOSTRO STILE</p>
+    <h2 data-i18n="dressCode"></h2>
+    <p data-i18n="dressCodeText"></p>
+    <p class="dress-detail-note" data-i18n="dressPresenceText"></p>
+  </div>
+  <div class="dress-detail-art" aria-hidden="true">
+    <img class="dress-watercolor-large" src="assets/images/dress_detail-watercolor.jpg" alt="">
+    <p class="dress-handwritten">Sentitevi liberi<br/>di essere voi stessi.<br/><span>Questo rende il nostro giorno<br/>ancora più speciale.</span></p>
+  </div>
+</div>
+</div><div class="detail-panel-content" id="detail-gifts" data-detail-key="gifts" data-section-flag="gifts" hidden=""><div class="detail-simple-content"><h2 data-i18n="gifts"></h2>
+
+<p data-i18n="giftsText"></p>
+</div></div></section>
+<!-- Macro section: Our day -->
+
+<!-- Macro section: Participate -->
+
+<!-- Macro section: Memories -->
+
+<!-- Macro section: Useful info -->
+
+<section class="quote-banner">
+<img alt="" id="landscapeImage" src=""/>
+<div class="quote-overlay"></div>
+<div class="quote-content">
+<p data-i18n="quote"></p>
+<span>♡</span>
+</div>
+</section>
+<footer>
+<div class="footer-brand">S &amp; L</div>
+<p data-i18n="footer"></p>
+<div class="footer-date" id="footerDate"></div>
+</footer>
+</main>
+<div aria-hidden="true" aria-labelledby="languageModalTitle" aria-modal="true" class="language-modal hidden" hidden="" id="languageModal" role="dialog">
+<div class="language-modal-card">
+<p class="section-kicker" data-i18n="languageLabel"></p>
+<h2 data-i18n="chooseLanguage" id="languageModalTitle"></h2>
+<p data-i18n="chooseLanguageText"></p>
+<div class="language-choice-grid">
+<button data-choice-lang="it" onclick="window.chooseLanguage('it')" type="button">Italiano</button>
+<button data-choice-lang="en" onclick="window.chooseLanguage('en')" type="button">English</button>
+<button data-choice-lang="de" onclick="window.chooseLanguage('de')" type="button">Deutsch</button>
+<button data-choice-lang="fr" onclick="window.chooseLanguage('fr')" type="button">Français</button>
+<button data-choice-lang="es" onclick="window.chooseLanguage('es')" type="button">Español</button>
+</div>
+</div>
+</div>
+<audio id="backgroundMusic" loop="" preload="none">
+<source src="assets/audio/dusk-till-dawn-violin.mp3" type="audio/mpeg"/>
+</audio>
+<div class="lightbox hidden" id="lightbox">
+<button aria-label="Close" data-i18n-aria="lightboxClose" id="lightboxClose">×</button>
+<img alt="" id="lightboxImage" src=""/>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/event-config.js"></script>
+<script src="js/translations.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,85 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f7f5ed;
+  color: #3a3f37;
+  padding: 20px;
+}
+
+.admin-shell {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.login-panel {
+  max-width: 400px;
+  margin: 80px auto;
+}
+
+.login-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.login-panel input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dcd9cd;
+  border-radius: 8px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.8rem;
+  color: #68735a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e6e3d8;
+}
+
+button {
+  background: #68735a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #e3e7dc;
+  color: #3a3f37;
+}

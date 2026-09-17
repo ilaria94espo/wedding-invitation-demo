@@ -1,0 +1,55 @@
+/* BUSTA DI APERTURA E SIGILLO */
+.opening {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--bg-creme);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.envelope-scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seal-click {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #68735a; /* Verde oliva */
+  border: 3px solid #fdfbf7;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.seal-click:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.seal-click::after {
+  content: "♡";
+  color: #ffffff;
+  font-size: 1.8rem;
+}
+
+.seal-click-ring {
+  position: absolute;
+  inset: -6px;
+  border: 1px dashed #68735a;
+  border-radius: 50%;
+  animation: spin 12s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}

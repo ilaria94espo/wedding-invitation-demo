@@ -1,3 +1,0 @@
--- DEPRECATED: V12 no longer uses gallery_uploads or a custom RPC for deletion.
--- Use supabase/gallery-anonymous-delete.sql instead.
--- Enable Authentication -> Providers -> Anonymous Sign-Ins first.

@@ -77,7 +77,6 @@ const EVENT = {
         schedule: true,
         faq: true,
         accommodation: true,
-        transport: true,
         dressCode: true,
         gifts: true
     },
@@ -87,5 +86,13 @@ const EVENT = {
         "assets/images/ceremony.jpg",
         "assets/images/reception.jpg",
         "assets/images/destination.jpg"
-    ]
+    ],
+
+    // Optional shared Google Photos album for this event.
+    // Set albumUrl to the contribution-enabled album URL for a real event.
+    googlePhotos: {
+        enabled: true,
+        // Paste the contribution-enabled Google Photos shared album URL here.
+        albumUrl: "https://photos.google.com/share/AF1QipPCj5MP3p7fDOFnsErpBy-hRjQS3CLWMysKUZN2a4BoWMtd7FlVCiS8ztffF0IiNQ?key=LTdMWS12RjB6eGdvbmpjYzVxckt3NGJZOVdOU3RB"
+    }
 };
