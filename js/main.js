@@ -42,6 +42,7 @@ const TOPIC_TRANSLATIONS = {
 };
 
 let currentLanguage = localStorage.getItem("eventLanguage") || "it";
+let activeDetailKey = null;
 let musicPlaying = false;
 const GALLERY_SESSION_KEY = "eventGallerySessionUploads";
 let sessionGalleryUploads = new Set();
@@ -62,7 +63,7 @@ function getTranslation(key) {
 
 function applySectionVisibility() {
   const flags = EVENT.sections || {};
-  $$('[data-section-flag]').forEach((el) => {
+  $$('[data-section-flag]:not(.detail-panel-content)').forEach((el) => {
     el.hidden = flags[el.dataset.sectionFlag] === false;
   });
 }
@@ -162,6 +163,11 @@ function chooseLanguage(lang) {
   const supported = ["it", "en", "de", "fr", "es"];
   if (!supported.includes(lang)) return;
 
+  // Preserve the currently opened detail panel when the language changes.
+  // The section visibility routine intentionally does not manage detail panels.
+  const visibleDetail = document.querySelector('.detail-panel-content:not([hidden])');
+  if (visibleDetail?.dataset.detailKey) activeDetailKey = visibleDetail.dataset.detailKey;
+
   currentLanguage = lang;
   try { localStorage.setItem("eventLanguage", lang); } catch (_) {}
 
@@ -185,6 +191,24 @@ function chooseLanguage(lang) {
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
   }
+
+  // Restore exactly one detail panel after translations/visibility are applied.
+  if (activeDetailKey) {
+    const panel = document.getElementById("detail-panel");
+    const target = document.querySelector(`.detail-panel-content[data-detail-key="${activeDetailKey}"]`);
+    const card = document.querySelector(`.topic-icon-card[data-section-flag="${activeDetailKey}"]`);
+    if (panel && target) {
+      document.querySelectorAll(".detail-panel-content").forEach((content) => {
+        content.hidden = content !== target;
+        content.classList.toggle("detail-content-active", content === target);
+      });
+      document.querySelectorAll(".topic-icon-card.is-selected").forEach((el) => el.classList.remove("is-selected"));
+      if (card) card.classList.add("is-selected");
+      panel.hidden = false;
+      panel.classList.add("is-open");
+    }
+  }
+
   document.body.classList.remove("no-scroll");
 
 }
@@ -261,6 +285,7 @@ function setupTopicNavigation() {
       // “Tutto ciò che devi sapere”. Clicking its card simply brings
       // that section into view instead of opening a second copy below.
       if (key === "schedule") {
+        activeDetailKey = null;
         closeAllDetails();
         panel.hidden = true;
         $$(".topic-icon-card.is-selected").forEach((el) => el.classList.remove("is-selected"));
@@ -273,6 +298,7 @@ function setupTopicNavigation() {
       }
 
       if (!key) return;
+      activeDetailKey = key;
       closeAllDetails();
       target.hidden = false;
       target.classList.add("detail-content-active");
@@ -513,6 +539,20 @@ function setupRsvp() {
   if (!form) return;
   const submitButton = form.querySelector('button[type="submit"]');
   const message = $("#rsvpMessage");
+
+  // “None” is mutually exclusive with the other dietary options.
+  const dietaryCheckboxes = [...form.querySelectorAll('input[name="dietaryOptions"]')];
+  dietaryCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      if (checkbox.value === "none" && checkbox.checked) {
+        dietaryCheckboxes.filter((item) => item !== checkbox).forEach((item) => { item.checked = false; });
+      } else if (checkbox.value !== "none" && checkbox.checked) {
+        const none = dietaryCheckboxes.find((item) => item.value === "none");
+        if (none) none.checked = false;
+      }
+    });
+  });
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const data = new FormData(form);
@@ -521,7 +561,9 @@ function setupRsvp() {
     if (!["yes", "no"].includes(attendingValue)) { message.textContent = getTranslation("rsvpError"); return; }
     const attending = attendingValue === "yes";
     const guests = Number.parseInt(data.get("guests"), 10);
-    const dietary = String(data.get("dietary") || "").trim();
+    const dietaryOptions = [...form.querySelectorAll('input[name="dietaryOptions"]:checked')].map((input) => input.value);
+    const dietaryDetails = String(data.get("dietaryDetails") || "").trim();
+    const dietary = [...dietaryOptions, dietaryDetails].filter(Boolean).join(" | ");
     if (!name) { message.textContent = getTranslation("rsvpError"); return; }
     if (!Number.isInteger(guests) || guests < 1 || guests > 10) { message.textContent = getTranslation("rsvpGuestsError"); return; }
     try {
