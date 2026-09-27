@@ -4,7 +4,7 @@ const TOPIC_TRANSLATIONS = {
     detailsEyebrow:"SCOPRI TUTTI I DETTAGLI", detailsTitle:"Tutto ciò che devi sapere", detailsSubtitle:"Tutte le informazioni del nostro giorno, raccolte in un unico posto.", heroSubtitle:"Insieme, verso la nostra più bella avventura.", scrollHint:"Scorri per scoprire di più",
     invitationGreeting:"Siamo felici di invitarvi", invitationLine:"Siamo felici di invitarvi al nostro matrimonio", chooseLanguage:"Scegli la tua lingua", chooseLanguageText:"Prima di entrare nell'invito, scegli la lingua che preferisci.",
     daysLabel:"giorni", hoursLabel:"ore", minutesLabel:"min", secondsLabel:"sec",
-    galleryUploadTitle:"Condividi una foto", galleryUploadText:"Clicca qui per scegliere le foto che vuoi condividere con noi.", galleryUploadHint:"JPG, PNG o WebP · massimo 10 MB per foto", galleryUploadButton:"Carica le foto", galleryUploadSending:"Caricamento in corso…", galleryUploadSuccess:"Le tue foto sono state caricate. Grazie!", galleryUploadError:"Non è stato possibile caricare le foto. Riprova.", galleryUploadSize:"Ogni foto deve essere inferiore a 10 MB.", galleryUploadEmpty:"Seleziona almeno una foto.", galleryDelete:"Elimina foto", galleryDeleteConfirm:"Vuoi eliminare questa foto?", galleryDeleteSuccess:"La foto è stata eliminata.", galleryDeleteError:"Non è stato possibile eliminare la foto.",
+    galleryUploadTitle:"Condividi una foto", galleryUploadText:"Clicca qui per scegliere le foto che vuoi condividere con noi.", galleryUploadHint:"JPG, PNG o WebP · massimo 10 MB per foto", galleryUploadButton:"Carica le foto", galleryUploadSending:"Caricamento in corso…", galleryUploadSuccess:"Le tue foto sono state caricate. Grazie!", galleryUploadError:"Non è stato possibile caricare le foto. Riprova.", galleryUploadSize:"Ogni foto deve essere inferiore a 10 MB.", galleryUploadEmpty:"Seleziona almeno una foto.", galleryDelete:"Elimina foto", galleryDeleteConfirm:"Vuoi eliminare questa foto?", galleryDeleteSuccess:"La foto è stata eliminata.", galleryDeleteError:"Non è stato possibile eliminare la foto.", galleryDownload:"Scarica foto", galleryDownloadError:"Non è stato possibile scaricare la foto.",
     directionsText:"Firenze è facilmente raggiungibile in treno e in auto. Le indicazioni personalizzate saranno disponibili qui.", transportText:"Parcheggio disponibile presso la villa. Possibilità di taxi e transfer su richiesta.", informationText:"Una giornata pensata per stare insieme, senza fretta, tra cerimonia, cena e festa.", contactsText:"Per qualsiasi dubbio, scrivici o chiamaci.", accommodationText:"Hotel Villa Verde, 8 minuti dalla location. Codice evento: SOFIALUCA27.", dressCodeText:"Vestitevi come vi sentite più a vostro agio. Non ci sono regole: scegliete ciò che vi fa sentire bene.", giftsText:"La vostra presenza è il regalo più bello. Per chi desidera contribuire, troverete qui le informazioni.", deadlineDate:"15 aprile 2027", languageLabel:"LINGUA", lightboxClose:"Chiudi", musicOn:"Musica attiva", musicOff:"Musica disattivata", rsvpDuplicate:"Abbiamo già ricevuto una conferma per questo nome.", googlePhotosTitle:"Condividete le vostre foto", googlePhotosText:"Apri l’album Google Photos e aggiungi le tue foto.", googlePhotosButton:"Apri Google Photos", googlePhotosQr:"Scansiona il QR code per aprire l’album.", googlePhotosSetupNote:"L’album viene configurato per ogni evento. Quando il link è disponibile, qui potrai aprirlo e aggiungere le tue foto.",
   },
   en: {
@@ -12,7 +12,7 @@ const TOPIC_TRANSLATIONS = {
     detailsEyebrow:"DISCOVER ALL THE DETAILS", detailsTitle:"Everything you need to know", detailsSubtitle:"All the information for our day, gathered in one place.", heroSubtitle:"Together, toward our most beautiful adventure.", scrollHint:"Scroll to discover more",
     invitationGreeting:"We are delighted to invite you", invitationLine:"We are delighted to invite you to our wedding", chooseLanguage:"Choose your language", chooseLanguageText:"Before entering the invitation, choose your preferred language.",
     daysLabel:"days", hoursLabel:"hours", minutesLabel:"min", secondsLabel:"sec",
-    galleryUploadTitle:"Share a photo", galleryUploadText:"Click here to choose the photos you would like to share with us.", galleryUploadHint:"JPG, PNG or WebP · maximum 10 MB per photo", galleryUploadButton:"Upload photos", galleryUploadSending:"Uploading…", galleryUploadSuccess:"Your photos have been uploaded. Thank you!", galleryUploadError:"The photos could not be uploaded. Please try again.", galleryUploadSize:"Each photo must be smaller than 10 MB.", galleryUploadEmpty:"Please select at least one photo.", galleryDelete:"Delete photo", galleryDeleteConfirm:"Do you want to delete this photo?", galleryDeleteSuccess:"The photo has been deleted.", galleryDeleteError:"The photo could not be deleted.",
+    galleryUploadTitle:"Share a photo", galleryUploadText:"Click here to choose the photos you would like to share with us.", galleryUploadHint:"JPG, PNG or WebP · maximum 10 MB per photo", galleryUploadButton:"Upload photos", galleryUploadSending:"Uploading…", galleryUploadSuccess:"Your photos have been uploaded. Thank you!", galleryUploadError:"The photos could not be uploaded. Please try again.", galleryUploadSize:"Each photo must be smaller than 10 MB.", galleryUploadEmpty:"Please select at least one photo.", galleryDelete:"Delete photo", galleryDeleteConfirm:"Do you want to delete this photo?", galleryDeleteSuccess:"The photo has been deleted.", galleryDeleteError:"The photo could not be deleted.", galleryDownload:"Download photo", galleryDownloadError:"The photo could not be downloaded.",
     directionsText:"Florence is easily reached by train and by car. Personalized directions will be available here.", transportText:"Parking is available at the villa. Taxis and transfers can be arranged on request.", informationText:"A day designed to be together, without rushing, between the ceremony, dinner and celebration.", contactsText:"If you have any questions, write to us or give us a call.", accommodationText:"Hotel Villa Verde, 8 minutes from the venue. Event code: SOFIALUCA27.", dressCodeText:"Dress in whatever makes you feel most comfortable. There are no rules: choose what makes you feel good.", giftsText:"Your presence is the greatest gift. If you would like to contribute, you will find the information here.", deadlineDate:"15 April 2027", languageLabel:"LANGUAGE", lightboxClose:"Close", musicOn:"Music on", musicOff:"Music off", rsvpDuplicate:"We have already received an RSVP for this name.", googlePhotosTitle:"Share your photos", googlePhotosText:"Open the Google Photos album and add your photos.", googlePhotosButton:"Open Google Photos", googlePhotosQr:"Scan the QR code to open the album.", googlePhotosSetupNote:"The album is configured separately for each event. Once the link is available, you can open it here and add your photos.",
   },
   de: {
@@ -20,7 +20,7 @@ const TOPIC_TRANSLATIONS = {
     detailsEyebrow:"ALLE DETAILS ENTDECKEN", detailsTitle:"Alles, was ihr wissen müsst", detailsSubtitle:"Alle Informationen zu unserem Tag an einem Ort.", heroSubtitle:"Gemeinsam auf zu unserem schönsten Abenteuer.", scrollHint:"Scrollen und mehr entdecken",
     invitationGreeting:"Wir freuen uns, euch einzuladen", invitationLine:"Wir freuen uns, euch zu unserer Hochzeit einzuladen", chooseLanguage:"Sprache auswählen", chooseLanguageText:"Wählt vor dem Öffnen der Einladung eure bevorzugte Sprache.",
     daysLabel:"Tage", hoursLabel:"Std.", minutesLabel:"Min.", secondsLabel:"Sek.",
-    galleryUploadTitle:"Ein Foto teilen", galleryUploadText:"Klickt hier, um Fotos auszuwählen, die ihr mit uns teilen möchtet.", galleryUploadHint:"JPG, PNG oder WebP · maximal 10 MB pro Foto", galleryUploadButton:"Fotos hochladen", galleryUploadSending:"Wird hochgeladen…", galleryUploadSuccess:"Eure Fotos wurden hochgeladen. Vielen Dank!", galleryUploadError:"Die Fotos konnten nicht hochgeladen werden. Bitte versucht es erneut.", galleryUploadSize:"Jedes Foto muss kleiner als 10 MB sein.", galleryUploadEmpty:"Bitte wählt mindestens ein Foto aus.", galleryDelete:"Foto löschen", galleryDeleteConfirm:"Möchtet ihr dieses Foto löschen?", galleryDeleteSuccess:"Das Foto wurde gelöscht.", galleryDeleteError:"Das Foto konnte nicht gelöscht werden.",
+    galleryUploadTitle:"Ein Foto teilen", galleryUploadText:"Klickt hier, um Fotos auszuwählen, die ihr mit uns teilen möchtet.", galleryUploadHint:"JPG, PNG oder WebP · maximal 10 MB pro Foto", galleryUploadButton:"Fotos hochladen", galleryUploadSending:"Wird hochgeladen…", galleryUploadSuccess:"Eure Fotos wurden hochgeladen. Vielen Dank!", galleryUploadError:"Die Fotos konnten nicht hochgeladen werden. Bitte versucht es erneut.", galleryUploadSize:"Jedes Foto muss kleiner als 10 MB sein.", galleryUploadEmpty:"Bitte wählt mindestens ein Foto aus.", galleryDelete:"Foto löschen", galleryDeleteConfirm:"Möchtet ihr dieses Foto löschen?", galleryDeleteSuccess:"Das Foto wurde gelöscht.", galleryDeleteError:"Das Foto konnte nicht gelöscht werden.", galleryDownload:"Foto herunterladen", galleryDownloadError:"Das Foto konnte nicht heruntergeladen werden.",
     directionsText:"Florenz ist bequem mit dem Zug und dem Auto erreichbar. Individuelle Anfahrtsinformationen werden hier verfügbar sein.", transportText:"Parkplätze stehen an der Villa zur Verfügung. Taxis und Transfers können auf Anfrage organisiert werden.", informationText:"Ein Tag, den wir gemeinsam verbringen möchten – ohne Eile, mit Trauung, Abendessen und Feier.", contactsText:"Bei Fragen schreibt uns gerne oder ruft uns an.", accommodationText:"Hotel Villa Verde, 8 Minuten von der Location entfernt. Veranstaltungscode: SOFIALUCA27.", dressCodeText:"Zieht euch so an, wie ihr euch am wohlsten fühlt. Es gibt keine Regeln: Wählt, worin ihr euch gut fühlt.", giftsText:"Eure Anwesenheit ist das schönste Geschenk. Wer uns darüber hinaus unterstützen möchte, findet hier weitere Informationen.", deadlineDate:"15. April 2027", languageLabel:"SPRACHE", lightboxClose:"Schließen", musicOn:"Musik an", musicOff:"Musik aus", rsvpDuplicate:"Für diesen Namen haben wir bereits eine Bestätigung erhalten.", googlePhotosTitle:"Teilt eure Fotos", googlePhotosText:"Öffnet das Google-Photos-Album und fügt eure Fotos hinzu.", googlePhotosButton:"Google Photos öffnen", googlePhotosQr:"QR-Code scannen, um das Album zu öffnen.", googlePhotosSetupNote:"Das Album wird für jede Veranstaltung separat eingerichtet. Sobald der Link verfügbar ist, könnt ihr ihn hier öffnen und Fotos hinzufügen.",
   },
   fr: {
@@ -28,7 +28,7 @@ const TOPIC_TRANSLATIONS = {
     detailsEyebrow:"DÉCOUVRIR TOUS LES DÉTAILS", detailsTitle:"Tout ce qu’il faut savoir", detailsSubtitle:"Toutes les informations de notre journée réunies au même endroit.", heroSubtitle:"Ensemble, vers notre plus belle aventure.", scrollHint:"Faites défiler pour en découvrir plus",
     invitationGreeting:"Nous sommes heureux de vous inviter", invitationLine:"Nous sommes heureux de vous inviter à notre mariage", chooseLanguage:"Choisissez votre langue", chooseLanguageText:"Avant d’entrer dans l’invitation, choisissez votre langue préférée.",
     daysLabel:"jours", hoursLabel:"heures", minutesLabel:"min", secondsLabel:"sec",
-    galleryUploadTitle:"Partager une photo", galleryUploadText:"Cliquez ici pour choisir les photos que vous souhaitez partager avec nous.", galleryUploadHint:"JPG, PNG ou WebP · maximum 10 Mo par photo", galleryUploadButton:"Télécharger les photos", galleryUploadSending:"Téléchargement…", galleryUploadSuccess:"Vos photos ont été téléchargées. Merci !", galleryUploadError:"Impossible de télécharger les photos. Réessayez.", galleryUploadSize:"Chaque photo doit faire moins de 10 Mo.", galleryUploadEmpty:"Sélectionnez au moins une photo.", galleryDelete:"Supprimer la photo", galleryDeleteConfirm:"Voulez-vous supprimer cette photo ?", galleryDeleteSuccess:"La photo a été supprimée.", galleryDeleteError:"Impossible de supprimer la photo.",
+    galleryUploadTitle:"Partager une photo", galleryUploadText:"Cliquez ici pour choisir les photos que vous souhaitez partager avec nous.", galleryUploadHint:"JPG, PNG ou WebP · maximum 10 Mo par photo", galleryUploadButton:"Télécharger les photos", galleryUploadSending:"Téléchargement…", galleryUploadSuccess:"Vos photos ont été téléchargées. Merci !", galleryUploadError:"Impossible de télécharger les photos. Réessayez.", galleryUploadSize:"Chaque photo doit faire moins de 10 Mo.", galleryUploadEmpty:"Sélectionnez au moins une photo.", galleryDelete:"Supprimer la photo", galleryDeleteConfirm:"Voulez-vous supprimer cette photo ?", galleryDeleteSuccess:"La photo a été supprimée.", galleryDeleteError:"Impossible de supprimer la photo.", galleryDownload:"Télécharger la photo", galleryDownloadError:"La photo n’a pas pu être téléchargée.",
     directionsText:"Florence est facilement accessible en train et en voiture. Des indications personnalisées seront disponibles ici.", transportText:"Un parking est disponible à la villa. Des taxis et transferts peuvent être organisés sur demande.", informationText:"Une journée pensée pour être ensemble, sans se presser, entre cérémonie, dîner et fête.", contactsText:"Pour toute question, écrivez-nous ou appelez-nous.", accommodationText:"Hotel Villa Verde, à 8 minutes du lieu. Code de l’événement : SOFIALUCA27.", dressCodeText:"Habillez-vous comme vous vous sentez le plus à l’aise. Il n’y a pas de règles : choisissez ce qui vous fait vous sentir bien.", giftsText:"Votre présence est le plus beau des cadeaux. Si vous souhaitez contribuer, vous trouverez les informations ici.", deadlineDate:"15 avril 2027", languageLabel:"LANGUE", lightboxClose:"Fermer", musicOn:"Musique activée", musicOff:"Musique désactivée", rsvpDuplicate:"Nous avons déjà reçu une confirmation pour ce nom.", googlePhotosTitle:"Partagez vos photos", googlePhotosText:"Ouvrez l’album Google Photos et ajoutez vos photos.", googlePhotosButton:"Ouvrir Google Photos", googlePhotosQr:"Scannez le QR code pour ouvrir l’album.", googlePhotosSetupNote:"L’album est configuré séparément pour chaque événement. Dès que le lien est disponible, vous pourrez l’ouvrir ici et ajouter vos photos.",
   },
   es: {
@@ -36,7 +36,7 @@ const TOPIC_TRANSLATIONS = {
     detailsEyebrow:"DESCUBRE TODOS LOS DETALLES", detailsTitle:"Todo lo que necesitas saber", detailsSubtitle:"Toda la información de nuestro día, reunida en un solo lugar.", heroSubtitle:"Juntos, hacia nuestra aventura más bonita.", scrollHint:"Desliza para descubrir más",
     invitationGreeting:"Estamos encantados de invitaros", invitationLine:"Estamos encantados de invitaros a nuestra boda", chooseLanguage:"Elige tu idioma", chooseLanguageText:"Antes de entrar en la invitación, elige el idioma que prefieras.",
     daysLabel:"días", hoursLabel:"horas", minutesLabel:"min", secondsLabel:"seg.",
-    galleryUploadTitle:"Comparte una foto", galleryUploadText:"Haz clic aquí para elegir las fotos que quieres compartir con nosotros.", galleryUploadHint:"JPG, PNG o WebP · máximo 10 MB por foto", galleryUploadButton:"Subir fotos", galleryUploadSending:"Subiendo…", galleryUploadSuccess:"Tus fotos se han subido. ¡Gracias!", galleryUploadError:"No se han podido subir las fotos. Inténtalo de nuevo.", galleryUploadSize:"Cada foto debe ser inferior a 10 MB.", galleryUploadEmpty:"Selecciona al menos una foto.", galleryDelete:"Eliminar foto", galleryDeleteConfirm:"¿Quieres eliminar esta foto?", galleryDeleteSuccess:"La foto se ha eliminado.", galleryDeleteError:"No se ha podido eliminar la foto.",
+    galleryUploadTitle:"Comparte una foto", galleryUploadText:"Haz clic aquí para elegir las fotos que quieres compartir con nosotros.", galleryUploadHint:"JPG, PNG o WebP · máximo 10 MB por foto", galleryUploadButton:"Subir fotos", galleryUploadSending:"Subiendo…", galleryUploadSuccess:"Tus fotos se han subido. ¡Gracias!", galleryUploadError:"No se han podido subir las fotos. Inténtalo de nuevo.", galleryUploadSize:"Cada foto debe ser inferior a 10 MB.", galleryUploadEmpty:"Selecciona al menos una foto.", galleryDelete:"Eliminar foto", galleryDeleteConfirm:"¿Quieres eliminar esta foto?", galleryDeleteSuccess:"La foto se ha eliminado.", galleryDeleteError:"No se ha podido eliminar la foto.", galleryDownload:"Descargar foto", galleryDownloadError:"No se ha podido descargar la foto.",
     directionsText:"Florencia es fácilmente accesible en tren y en coche. Aquí estarán disponibles las indicaciones personalizadas.", transportText:"Hay aparcamiento disponible en la villa. Se pueden organizar taxis y traslados bajo petición.", informationText:"Un día pensado para estar juntos, sin prisas, entre ceremonia, cena y celebración.", contactsText:"Si tienes alguna pregunta, escríbenos o llámanos.", accommodationText:"Hotel Villa Verde, a 8 minutos del lugar. Código del evento: SOFIALUCA27.", dressCodeText:"Vestíos como os sintáis más cómodos. No hay reglas: elegid lo que os haga sentir bien.", giftsText:"Vuestra presencia es el regalo más bonito. Si queréis contribuir, aquí encontraréis la información.", deadlineDate:"15 de abril de 2027", languageLabel:"IDIOMA", lightboxClose:"Cerrar", musicOn:"Música activada", musicOff:"Música desactivada", rsvpDuplicate:"Ya hemos recibido una confirmación para este nombre.", googlePhotosTitle:"Comparte tus fotos", googlePhotosText:"Abre el álbum de Google Photos y añade tus fotos.", googlePhotosButton:"Abrir Google Photos", googlePhotosQr:"Escanea el código QR para abrir el álbum.", googlePhotosSetupNote:"El álbum se configura por separado para cada evento. Cuando el enlace esté disponible, podrás abrirlo aquí y añadir tus fotos.",
   }
 };
@@ -429,6 +429,27 @@ function buildGallery(items) {
     button.addEventListener("click", () => openLightbox(item.url));
     wrapper.appendChild(button);
 
+    // Download button is shown directly on every gallery photo,
+    // so guests do not need to open the photo first.
+    const downloadButton = document.createElement("button");
+    downloadButton.type = "button";
+    downloadButton.className = "gallery-download-button";
+    downloadButton.title = getTranslation("galleryDownload");
+    downloadButton.setAttribute("aria-label", getTranslation("galleryDownload"));
+    downloadButton.innerHTML = `
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 3v11"></path>
+        <path d="m7 10 5 5 5-5"></path>
+        <path d="M5 21h14"></path>
+      </svg>
+    `;
+    downloadButton.addEventListener("click", async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      await downloadGalleryPhoto(item.url);
+    });
+    wrapper.appendChild(downloadButton);
+
     // Delete is available only for photos uploaded during this browser session.
     if (item.path && sessionGalleryUploads.has(item.path)) {
       const deleteButton = document.createElement("button");
@@ -592,11 +613,87 @@ function setupRsvp() {
   });
 }
 
-function openLightbox(src) { $("#lightboxImage").src = src; $("#lightbox").classList.remove("hidden"); document.body.classList.add("no-scroll"); }
-function closeLightbox() { $("#lightbox").classList.add("hidden"); document.body.classList.remove("no-scroll"); }
+function getGalleryDownloadFilename(src) {
+  try {
+    const url = new URL(src, window.location.href);
+    const rawName = decodeURIComponent(url.pathname.split("/").filter(Boolean).pop() || "photo");
+    const cleanName = rawName.replace(/[^a-zA-Z0-9._-]+/g, "-");
+    return cleanName || "photo";
+  } catch (_) {
+    return "photo";
+  }
+}
+
+async function downloadGalleryPhoto(src) {
+  const message = $("#publicGalleryMessage");
+  const filename = getGalleryDownloadFilename(src);
+
+  try {
+    const response = await fetch(src, { mode: "cors" });
+    if (!response.ok) throw new Error(`Download failed: ${response.status}`);
+
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = blobUrl;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+  } catch (error) {
+    console.warn("Gallery photo download failed:", error);
+
+    // Fallback for browsers that block programmatic downloads.
+    const fallback = document.createElement("a");
+    fallback.href = src;
+    fallback.target = "_blank";
+    fallback.rel = "noopener";
+    document.body.appendChild(fallback);
+    fallback.click();
+    fallback.remove();
+
+    if (message) message.textContent = getTranslation("galleryDownloadError");
+  }
+}
+
+function openLightbox(src) {
+  const image = $("#lightboxImage");
+  const downloadButton = $("#lightboxDownload");
+
+  if (image) image.src = src;
+
+  if (downloadButton) {
+    downloadButton.href = src;
+    downloadButton.setAttribute("download", getGalleryDownloadFilename(src));
+    downloadButton.setAttribute("aria-label", getTranslation("galleryDownload"));
+    downloadButton.title = getTranslation("galleryDownload");
+  }
+
+  $("#lightbox").classList.remove("hidden");
+  document.body.classList.add("no-scroll");
+}
+
+function closeLightbox() {
+  $("#lightbox").classList.add("hidden");
+  document.body.classList.remove("no-scroll");
+}
+
 function setupLightbox() {
   $("#lightboxClose").addEventListener("click", closeLightbox);
-  $("#lightbox").addEventListener("click", (event) => { if (event.target.id === "lightbox") closeLightbox(); });
+
+  const downloadButton = $("#lightboxDownload");
+  if (downloadButton) {
+    downloadButton.addEventListener("click", async (event) => {
+      event.preventDefault();
+      const src = $("#lightboxImage")?.src;
+      if (src) await downloadGalleryPhoto(src);
+    });
+  }
+
+  $("#lightbox").addEventListener("click", (event) => {
+    if (event.target.id === "lightbox") closeLightbox();
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
