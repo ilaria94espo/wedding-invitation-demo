@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RSVP Dashboard</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <section id="loginView" class="panel login-panel">
+      <div class="admin-language">
+        <button id="languageButton" class="language-button" type="button" aria-expanded="false">IT</button>
+        <div id="languageDropdown" class="language-dropdown hidden">
+          <button data-lang="it" type="button">Italiano</button>
+          <button data-lang="en" type="button">English</button>
+          <button data-lang="de" type="button">Deutsch</button>
+          <button data-lang="fr" type="button">Français</button>
+          <button data-lang="es" type="button">Español</button>
+        </div>
+      </div>
+      <p class="eyebrow" data-i18n="adminLabel">EVENT ADMIN</p>
+      <h1 data-i18n="dashboardTitle">RSVP Dashboard</h1>
+      <p class="muted" data-i18n="loginSubtitle">Accesso riservato agli organizzatori.</p>
+      <form id="loginForm">
+        <label><span data-i18n="email">Email</span>
+          <input id="email" type="email" autocomplete="email" required>
+        </label>
+        <label><span data-i18n="password">Password</span>
+          <input id="password" type="password" autocomplete="current-password" required>
+        </label>
+        <button type="submit" data-i18n="login">Accedi</button>
+        <p id="loginMessage" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="dashboardView" class="hidden">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" data-i18n="adminLabel">EVENT ADMIN</p>
+          <h1 data-i18n="dashboardTitle">RSVP Dashboard</h1>
+          <p id="eventLabel" class="muted"></p>
+        </div>
+        <div class="topbar-actions">
+          <div class="admin-language">
+            <button id="dashboardLanguageButton" class="language-button" type="button" aria-expanded="false">IT</button>
+            <div id="dashboardLanguageDropdown" class="language-dropdown hidden">
+              <button data-lang="it" type="button">Italiano</button>
+              <button data-lang="en" type="button">English</button>
+              <button data-lang="de" type="button">Deutsch</button>
+              <button data-lang="fr" type="button">Français</button>
+              <button data-lang="es" type="button">Español</button>
+            </div>
+          </div>
+          <button id="logoutButton" class="secondary" data-i18n="logout">Esci</button>
+        </div>
+      </header>
+
+      <section class="stats">
+        <article class="stat"><span data-i18n="responses">Conferme</span><strong id="totalResponses">0</strong></article>
+        <article class="stat"><span data-i18n="attending">Partecipanti</span><strong id="attendingCount">0</strong></article>
+        <article class="stat"><span data-i18n="notAttending">Non partecipano</span><strong id="notAttendingCount">0</strong></article>
+        <article class="stat"><span data-i18n="dietary">Esigenze alimentari</span><strong id="dietaryCount">0</strong></article>
+      </section>
+
+      <section class="panel">
+        <div class="table-head">
+          <div>
+            <h2 data-i18n="responsesReceived">Conferme ricevute</h2>
+            <p class="muted" data-i18n="updatedFromSupabase">Aggiornato dal database Supabase.</p>
+          </div>
+          <button id="refreshButton" class="secondary" data-i18n="refresh">Aggiorna</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="name">Nome</th>
+                <th data-i18n="attendance">Presenza</th>
+                <th data-i18n="guests">Ospiti</th>
+                <th data-i18n="dietaryNeeds">Esigenze alimentari</th>
+                <th data-i18n="date">Data</th>
+              </tr>
+            </thead>
+            <tbody id="rsvpRows"></tbody>
+          </table>
+        </div>
+        <p id="dashboardMessage" class="message" aria-live="polite"></p>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/event-config.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
