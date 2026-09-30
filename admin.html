@@ -32,6 +32,12 @@
         <button type="submit" data-i18n="login">Accedi</button>
         <p id="loginMessage" class="message" aria-live="polite"></p>
       </form>
+
+      <div class="demo-login">
+        <div class="demo-divider"><span data-i18n="demoDivider">oppure</span></div>
+        <button id="demoLoginButton" type="button" class="secondary demo-button" data-i18n="demoLogin">🎭 Accedi alla demo</button>
+        <p class="demo-note" data-i18n="demoNote">Modalità dimostrativa · nessuna password richiesta</p>
+      </div>
     </section>
 
     <section id="dashboardView" class="hidden">
@@ -63,6 +69,83 @@
         <article class="stat"><span data-i18n="dietary">Esigenze alimentari</span><strong id="dietaryCount">0</strong></article>
       </section>
 
+      <section class="panel guest-panel">
+        <div class="section-head">
+          <div>
+            <h2 data-i18n="guestManagement">Gestione invitati</h2>
+            <p class="muted" data-i18n="guestManagementSubtitle">Gestisci la lista degli invitati.</p>
+          </div>
+          <button id="addGuestButton" type="button" class="secondary" data-i18n="addGuest">+ Aggiungi invitato</button>
+        </div>
+        <form id="guestForm" class="guest-form hidden">
+          <input id="guestId" type="hidden">
+          <div class="guest-form-grid">
+            <label><span data-i18n="firstName">Nome</span><input id="guestFirstName" type="text" required></label>
+            <label><span data-i18n="lastName">Cognome</span><input id="guestLastName" type="text"></label>
+            <label><span data-i18n="guestStatus">Stato</span><select id="guestAttending"><option value="true" data-i18n="confirmed">Confermato</option><option value="false" data-i18n="notAttending">Non partecipa</option></select></label>
+            <label><span data-i18n="guestType">Tipo</span><select id="guestType"><option value="adult" data-i18n="adult">Adulto</option><option value="child" data-i18n="child">Bambino</option><option value="infant" data-i18n="infant">Neonato (senza posto)</option></select></label>
+            <label><span data-i18n="dietaryNeeds">Esigenze alimentari</span><input id="guestDietary" type="text"></label>
+            <label class="guest-notes-field"><span data-i18n="notes">Note</span><textarea id="guestNotes" rows="2"></textarea></label>
+          </div>
+          <div class="guest-form-actions">
+            <button id="saveGuestButton" type="submit" data-i18n="saveGuest">Salva invitato</button>
+            <button id="cancelGuestButton" type="button" class="secondary" data-i18n="cancel">Annulla</button>
+          </div>
+          <p id="guestFormMessage" class="message"></p>
+        </form>
+        <div class="guest-toolbar">
+          <input id="guestSearch" type="search" data-i18n-placeholder="searchGuests" placeholder="Cerca invitato…">
+          <span id="guestCountLabel" class="muted"></span>
+        </div>
+        <div class="table-wrap">
+          <table class="guest-table">
+            <thead><tr>
+              <th data-i18n="name">Nome</th>
+              <th data-i18n="guestType">Tipo</th>
+              <th data-i18n="guestStatus">Stato</th>
+              <th data-i18n="dietaryNeeds">Esigenze alimentari</th>
+              <th data-i18n="notes">Note</th>
+              <th data-i18n="actions">Azioni</th>
+            </tr></thead>
+            <tbody id="guestRows"></tbody>
+          </table>
+        </div>
+        <p id="guestMessage" class="message"></p>
+      </section>
+
+      <section class="panel table-management-panel">
+        <div class="section-head">
+          <div>
+            <h2 data-i18n="tableManagement">Gestione tavoli</h2>
+            <p class="muted" data-i18n="tableManagementSubtitle">Organizza gli invitati ai tavoli del ricevimento.</p>
+          </div>
+          <button id="addTableButton" type="button" class="secondary" data-i18n="addTable">+ Aggiungi tavolo</button>
+        </div>
+
+        <form id="tableForm" class="table-form hidden">
+          <input id="tableId" type="hidden">
+          <div class="table-form-grid">
+            <label><span data-i18n="tableName">Nome tavolo</span><input id="tableName" type="text" required placeholder="Tavolo 1"></label>
+            <label><span data-i18n="tableCapacity">Posti</span><input id="tableCapacity" type="number" min="1" max="100" value="10" required></label>
+          </div>
+          <div class="table-form-actions">
+            <button id="saveTableButton" type="submit" data-i18n="saveTable">Salva tavolo</button>
+            <button id="cancelTableButton" type="button" class="secondary" data-i18n="cancel">Annulla</button>
+          </div>
+          <p id="tableFormMessage" class="message" aria-live="polite"></p>
+        </form>
+
+        <div class="table-overview" id="tableOverview">
+          <div class="table-overview-stat"><span data-i18n="totalTables">Tavoli</span><strong id="totalTables">0</strong></div>
+          <div class="table-overview-stat"><span data-i18n="totalSeats">Posti totali</span><strong id="totalSeats">0</strong></div>
+          <div class="table-overview-stat"><span data-i18n="occupiedSeats">Posti occupati</span><strong id="occupiedSeats">0</strong></div>
+          <div class="table-overview-stat"><span data-i18n="freeSeats">Posti disponibili</span><strong id="freeSeats">0</strong></div>
+        </div>
+
+        <div id="tableCards" class="table-cards"></div>
+        <p id="tableMessage" class="message" aria-live="polite"></p>
+      </section>
+
       <section class="panel">
         <div class="table-head">
           <div>
@@ -80,6 +163,7 @@
                 <th data-i18n="guests">Ospiti</th>
                 <th data-i18n="dietaryNeeds">Esigenze alimentari</th>
                 <th data-i18n="date">Data</th>
+                <th data-i18n="actions">Azioni</th>
               </tr>
             </thead>
             <tbody id="rsvpRows"></tbody>

@@ -45,6 +45,17 @@ const TRANSLATIONS = {
     rsvpSuccess: "Grazie {name}! La tua conferma è stata registrata.",
     rsvpError: "Non è stato possibile registrare la conferma. Riprova tra poco.",
     rsvpGuestsError: "Inserisci un numero di invitati compreso tra 1 e 10.",
+    rsvpGuestDetailsTitle: "Dettagli degli invitati",
+    rsvpMainGuest: "Invitato principale",
+    rsvpCompanion: "Accompagnatore",
+    rsvpPersonDietary: "Esigenze alimentari",
+    rsvpPersonDetails: "Altre esigenze o informazioni",
+    rsvpCompanionName: "Nome e cognome dell’accompagnatore",
+    rsvpGuestDetailsHint: "Indica nome e esigenze alimentari di ogni persona che parteciperà.",
+    rsvpGuestType: "Tipo di invitato",
+    rsvpAdult: "Adulto",
+    rsvpChild: "Bambino",
+    rsvpInfant: "Neonato (senza posto)",
     answer1: "A che ora inizia la cerimonia?",
     answer1Text: "La cerimonia inizierà alle 16:00. Ti consigliamo di arrivare con qualche minuto di anticipo.",
     answer2: "Dove posso parcheggiare?",
@@ -52,7 +63,8 @@ const TRANSLATIONS = {
     answer3: "È previsto un dress code?",
     answer3Text: "No, non ci sono regole: vestitevi come vi sentite più a vostro agio e scegliete ciò che vi fa sentire bene.",
     quote: "Non è dove, ma con chi.",
-    footer: "Un giorno speciale, una vita insieme"
+    footer: "Un giorno speciale, una vita insieme",
+    organizerArea: "Area organizzatori"
   },
 
   en: {
@@ -101,6 +113,17 @@ const TRANSLATIONS = {
     rsvpSuccess: "Thank you, {name}! Your RSVP has been recorded.",
     rsvpError: "We could not save your RSVP. Please try again.",
     rsvpGuestsError: "Enter a number of guests between 1 and 10.",
+    rsvpGuestDetailsTitle: "Guest details",
+    rsvpMainGuest: "Main guest",
+    rsvpCompanion: "Companion",
+    rsvpPersonDietary: "Dietary requirements",
+    rsvpPersonDetails: "Other dietary needs or information",
+    rsvpCompanionName: "Companion full name",
+    rsvpGuestDetailsHint: "Please provide the name and dietary requirements for each person attending.",
+    rsvpGuestType: "Guest type",
+    rsvpAdult: "Adult",
+    rsvpChild: "Child",
+    rsvpInfant: "Infant (no seat)",
     answer1: "What time does the ceremony start?",
     answer1Text: "The ceremony starts at 4:00 PM. We recommend arriving a few minutes early.",
     answer2: "Where can I park?",
@@ -108,7 +131,8 @@ const TRANSLATIONS = {
     answer3: "Is there a dress code?",
     answer3Text: "No, there are no rules: dress in whatever makes you feel most comfortable and choose what makes you feel good.",
     quote: "It is not where, but with whom.",
-    footer: "One special day, a lifetime together"
+    footer: "One special day, a lifetime together",
+    organizerArea: "Organizers area"
   },
 
   de: {
@@ -157,6 +181,17 @@ const TRANSLATIONS = {
     rsvpSuccess: "Danke, {name}! Deine Zusage wurde gespeichert.",
     rsvpError: "Die Zusage konnte nicht gespeichert werden. Bitte versuche es erneut.",
     rsvpGuestsError: "Gib eine Gästezahl zwischen 1 und 10 ein.",
+    rsvpGuestDetailsTitle: "Details der Gäste",
+    rsvpMainGuest: "Hauptgast",
+    rsvpCompanion: "Begleitperson",
+    rsvpPersonDietary: "Ernährungsbedürfnisse",
+    rsvpPersonDetails: "Weitere Wünsche oder Informationen",
+    rsvpCompanionName: "Vor- und Nachname der Begleitperson",
+    rsvpGuestDetailsHint: "Bitte Name und Ernährungsbedürfnisse jeder teilnehmenden Person angeben.",
+    rsvpGuestType: "Art des Gastes",
+    rsvpAdult: "Erwachsener",
+    rsvpChild: "Kind",
+    rsvpInfant: "Baby (kein Sitzplatz)",
     answer1: "Wann beginnt die Trauung?",
     answer1Text: "Die Trauung beginnt um 16:00 Uhr. Bitte kommt einige Minuten früher.",
     answer2: "Wo kann ich parken?",
@@ -164,7 +199,8 @@ const TRANSLATIONS = {
     answer3: "Gibt es einen Dresscode?",
     answer3Text: "Nein, es gibt keine Regeln: Zieht euch so an, wie ihr euch am wohlsten fühlt, und wählt, worin ihr euch gut fühlt.",
     quote: "Es kommt nicht darauf an, wo, sondern mit wem.",
-    footer: "Ein besonderer Tag, ein gemeinsames Leben"
+    footer: "Ein besonderer Tag, ein gemeinsames Leben",
+    organizerArea: "Bereich für die Organisatoren"
   },
 
   fr: {
@@ -213,6 +249,17 @@ const TRANSLATIONS = {
     rsvpSuccess: "Merci {name} ! Ta réponse a bien été enregistrée.",
     rsvpError: "Nous n’avons pas pu enregistrer ta réponse. Réessaie plus tard.",
     rsvpGuestsError: "Indique un nombre d’invités entre 1 et 10.",
+    rsvpGuestDetailsTitle: "Détails des invités",
+    rsvpMainGuest: "Invité principal",
+    rsvpCompanion: "Accompagnant(e)",
+    rsvpPersonDietary: "Besoins alimentaires",
+    rsvpPersonDetails: "Autres besoins ou informations",
+    rsvpCompanionName: "Nom et prénom de l’accompagnant(e)",
+    rsvpGuestDetailsHint: "Indiquez le nom et les besoins alimentaires de chaque personne présente.",
+    rsvpGuestType: "Type d’invité",
+    rsvpAdult: "Adulte",
+    rsvpChild: "Enfant",
+    rsvpInfant: "Bébé (sans place)",
     answer1: "À quelle heure commence la cérémonie ?",
     answer1Text: "La cérémonie commence à 16h00. Nous vous conseillons d'arriver quelques minutes à l'avance.",
     answer2: "Où puis-je me garer ?",
@@ -220,7 +267,8 @@ const TRANSLATIONS = {
     answer3: "Y a-t-il un dress code ?",
     answer3Text: "Non, il n’y a pas de règles : habillez-vous comme vous vous sentez le plus à l’aise et choisissez ce qui vous fait vous sentir bien.",
     quote: "Ce n'est pas où, mais avec qui.",
-    footer: "Un jour spécial, une vie ensemble"
+    footer: "Un jour spécial, une vie ensemble",
+    organizerArea: "Espace des organisateurs"
   },
 
   es: {
@@ -269,6 +317,17 @@ const TRANSLATIONS = {
     rsvpSuccess: "¡Gracias, {name}! Tu confirmación ha sido registrada.",
     rsvpError: "No hemos podido guardar tu confirmación. Inténtalo de nuevo.",
     rsvpGuestsError: "Introduce un número de invitados entre 1 y 10.",
+    rsvpGuestDetailsTitle: "Datos de los invitados",
+    rsvpMainGuest: "Invitado principal",
+    rsvpCompanion: "Acompañante",
+    rsvpPersonDietary: "Necesidades alimentarias",
+    rsvpPersonDetails: "Otras necesidades o información",
+    rsvpCompanionName: "Nombre y apellidos del acompañante",
+    rsvpGuestDetailsHint: "Indica el nombre y las necesidades alimentarias de cada persona que asistirá.",
+    rsvpGuestType: "Tipo de invitado",
+    rsvpAdult: "Adulto",
+    rsvpChild: "Niño",
+    rsvpInfant: "Bebé (sin asiento)",
     answer1: "¿A qué hora comienza la ceremonia?",
     answer1Text: "La ceremonia comienza a las 16:00. Recomendamos llegar unos minutos antes.",
     answer2: "¿Dónde puedo aparcar?",
@@ -276,6 +335,7 @@ const TRANSLATIONS = {
     answer3: "¿Hay código de vestimenta?",
     answer3Text: "No, no hay reglas: vestíos como os sintáis más cómodos y elegid lo que os haga sentir bien.",
     quote: "No importa dónde, sino con quién.",
-    footer: "Un día especial, una vida juntos"
+    footer: "Un día especial, una vida juntos",
+    organizerArea: "Área de organizadores"
   }
 };

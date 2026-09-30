@@ -135,23 +135,7 @@
 <span data-i18n="guests"></span>
 <input max="10" min="1" name="guests" type="number" value="1"/>
 </label>
-<fieldset class="rsvp-dietary-field">
-<legend data-i18n="dietary"></legend>
-<div class="rsvp-dietary-options">
-<label class="rsvp-check"><input type="checkbox" name="dietaryOptions" value="none"><span data-i18n="dietaryNone"></span></label>
-<label class="rsvp-check"><input type="checkbox" name="dietaryOptions" value="vegetarian"><span data-i18n="dietaryVegetarian"></span></label>
-<label class="rsvp-check"><input type="checkbox" name="dietaryOptions" value="vegan"><span data-i18n="dietaryVegan"></span></label>
-<label class="rsvp-check"><input type="checkbox" name="dietaryOptions" value="gluten-free"><span data-i18n="dietaryGlutenFree"></span></label>
-<label class="rsvp-check"><input type="checkbox" name="dietaryOptions" value="lactose-free"><span data-i18n="dietaryLactoseFree"></span></label>
-<label class="rsvp-check"><input type="checkbox" name="dietaryOptions" value="nuts"><span data-i18n="dietaryNuts"></span></label>
-<label class="rsvp-check"><input type="checkbox" name="dietaryOptions" value="shellfish"><span data-i18n="dietaryShellfish"></span></label>
-<label class="rsvp-check"><input type="checkbox" name="dietaryOptions" value="other"><span data-i18n="dietaryOther"></span></label>
-</div>
-<label class="rsvp-free-text">
-<span data-i18n="dietaryDetails"></span>
-<textarea name="dietaryDetails" rows="3"></textarea>
-</label>
-</fieldset>
+<div class="rsvp-guest-details" id="rsvpGuestDetails" hidden></div>
 <button class="primary-button" data-i18n="sendRsvp" type="submit"></button>
 <p class="form-note" id="rsvpMessage"></p>
 </form></div><div class="detail-panel-content" id="detail-gallery" data-detail-key="gallery" data-section-flag="gallery" hidden="">
@@ -245,6 +229,7 @@
 <div class="footer-brand">S &amp; L</div>
 <p data-i18n="footer"></p>
 <div class="footer-date" id="footerDate"></div>
+<a href="admin.html" class="admin-footer-link"><span class="admin-footer-lock" aria-hidden="true">🔒</span><span data-i18n="organizerArea">Area organizzatori</span></a>
 </footer>
 </main>
 <div aria-hidden="true" aria-labelledby="languageModalTitle" aria-modal="true" class="language-modal hidden" hidden="" id="languageModal" role="dialog">

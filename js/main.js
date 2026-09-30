@@ -56,6 +56,16 @@ function saveSessionGalleryUploads() {
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 
+// Escape text before inserting translations or user-provided values into HTML.
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 function getTranslation(key) {
   const base = (typeof TRANSLATIONS !== "undefined" && TRANSLATIONS[currentLanguage]) || {};
   return TOPIC_TRANSLATIONS[currentLanguage]?.[key] ?? base[key] ?? key;
@@ -429,27 +439,6 @@ function buildGallery(items) {
     button.addEventListener("click", () => openLightbox(item.url));
     wrapper.appendChild(button);
 
-    // Download button is shown directly on every gallery photo,
-    // so guests do not need to open the photo first.
-    const downloadButton = document.createElement("button");
-    downloadButton.type = "button";
-    downloadButton.className = "gallery-download-button";
-    downloadButton.title = getTranslation("galleryDownload");
-    downloadButton.setAttribute("aria-label", getTranslation("galleryDownload"));
-    downloadButton.innerHTML = `
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M12 3v11"></path>
-        <path d="m7 10 5 5 5-5"></path>
-        <path d="M5 21h14"></path>
-      </svg>
-    `;
-    downloadButton.addEventListener("click", async (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      await downloadGalleryPhoto(item.url);
-    });
-    wrapper.appendChild(downloadButton);
-
     // Delete is available only for photos uploaded during this browser session.
     if (item.path && sessionGalleryUploads.has(item.path)) {
       const deleteButton = document.createElement("button");
@@ -560,19 +549,122 @@ function setupRsvp() {
   if (!form) return;
   const submitButton = form.querySelector('button[type="submit"]');
   const message = $("#rsvpMessage");
+  const guestsInput = form.querySelector('[name="guests"]');
+  const guestDetails = $("#rsvpGuestDetails");
 
-  // “None” is mutually exclusive with the other dietary options.
-  const dietaryCheckboxes = [...form.querySelectorAll('input[name="dietaryOptions"]')];
-  dietaryCheckboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", () => {
-      if (checkbox.value === "none" && checkbox.checked) {
-        dietaryCheckboxes.filter((item) => item !== checkbox).forEach((item) => { item.checked = false; });
-      } else if (checkbox.value !== "none" && checkbox.checked) {
-        const none = dietaryCheckboxes.find((item) => item.value === "none");
-        if (none) none.checked = false;
-      }
+  const dietaryOptions = [
+    ["none", "dietaryNone"],
+    ["vegetarian", "dietaryVegetarian"],
+    ["vegan", "dietaryVegan"],
+    ["gluten-free", "dietaryGlutenFree"],
+    ["lactose-free", "dietaryLactoseFree"],
+    ["nuts", "dietaryNuts"],
+    ["shellfish", "dietaryShellfish"],
+    ["other", "dietaryOther"]
+  ];
+
+  function guestCard(index, name, isMainGuest) {
+    const card = document.createElement("div");
+    card.className = "rsvp-guest-card";
+    card.dataset.guestIndex = String(index);
+    const title = document.createElement("div");
+    title.className = "rsvp-guest-card-title";
+    title.innerHTML = `<span>${escapeHtml(getTranslation(isMainGuest ? "rsvpMainGuest" : "rsvpCompanion"))} ${index + 1}</span>`;
+    card.appendChild(title);
+
+    if (isMainGuest) {
+      const nameBox = document.createElement("div");
+      nameBox.className = "rsvp-guest-readonly-name";
+      nameBox.innerHTML = `<span>${escapeHtml(getTranslation("guestName"))}</span><strong data-main-guest-name></strong>`;
+      card.appendChild(nameBox);
+    } else {
+      const label = document.createElement("label");
+      label.className = "rsvp-companion-name";
+      label.innerHTML = `<span>${escapeHtml(getTranslation("rsvpCompanionName"))}</span><input name="companionName" required maxlength="120" />`;
+      card.appendChild(label);
+    }
+
+    const typeLabel = document.createElement("label");
+    typeLabel.className = "rsvp-person-type";
+    typeLabel.innerHTML = `<span>${escapeHtml(getTranslation("rsvpGuestType"))}</span><select name="guestType" required><option value="adult">${escapeHtml(getTranslation("rsvpAdult"))}</option><option value="child">${escapeHtml(getTranslation("rsvpChild"))}</option><option value="infant">${escapeHtml(getTranslation("rsvpInfant"))}</option></select>`;
+    card.appendChild(typeLabel);
+
+    const dietaryBlock = document.createElement("fieldset");
+    dietaryBlock.className = "rsvp-person-dietary";
+    dietaryBlock.innerHTML = `<legend>${escapeHtml(getTranslation("rsvpPersonDietary"))}</legend>`;
+    const options = document.createElement("div");
+    options.className = "rsvp-person-dietary-options";
+    dietaryOptions.forEach(([value, key]) => {
+      const label = document.createElement("label");
+      label.className = "rsvp-check";
+      label.innerHTML = `<input type="checkbox" name="guestDietary" value="${value}"><span>${escapeHtml(getTranslation(key))}</span>`;
+      options.appendChild(label);
     });
-  });
+    dietaryBlock.appendChild(options);
+
+    const details = document.createElement("label");
+    details.className = "rsvp-person-details";
+    details.innerHTML = `<span>${escapeHtml(getTranslation("rsvpPersonDetails"))}</span><textarea name="guestDietaryDetails" rows="2" maxlength="500"></textarea>`;
+    dietaryBlock.appendChild(details);
+    card.appendChild(dietaryBlock);
+
+    options.querySelectorAll('input[name="guestDietary"]').forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        const checks = [...options.querySelectorAll('input[name="guestDietary"]')];
+        if (checkbox.value === "none" && checkbox.checked) {
+          checks.filter((item) => item !== checkbox).forEach((item) => { item.checked = false; });
+        } else if (checkbox.value !== "none" && checkbox.checked) {
+          const none = checks.find((item) => item.value === "none");
+          if (none) none.checked = false;
+        }
+      });
+    });
+    return card;
+  }
+
+  function renderGuestDetails() {
+    if (!guestDetails || !guestsInput) return;
+    const count = Math.max(1, Math.min(10, Number.parseInt(guestsInput.value, 10) || 1));
+    guestDetails.innerHTML = "";
+    guestDetails.hidden = false;
+    const heading = document.createElement("div");
+    heading.className = "rsvp-guest-details-heading";
+    heading.innerHTML = `<h3>${escapeHtml(getTranslation("rsvpGuestDetailsTitle"))}</h3><p>${escapeHtml(getTranslation("rsvpGuestDetailsHint"))}</p>`;
+    guestDetails.appendChild(heading);
+    const mainName = form.querySelector('[name="name"]')?.value.trim() || "";
+    for (let index = 0; index < count; index += 1) {
+      const card = guestCard(index, index === 0 ? mainName : "", index === 0);
+      if (index === 0) card.querySelector("[data-main-guest-name]").textContent = mainName || "—";
+      guestDetails.appendChild(card);
+    }
+    const mainDietary = guestDetails.querySelector('.rsvp-guest-card[data-guest-index="0"]');
+    if (mainDietary) {
+      const none = mainDietary.querySelector('input[value="none"]');
+      if (none) none.checked = true;
+    }
+    const isAttending = form.querySelector('[name="attending"]')?.value === "yes";
+    guestDetails.querySelectorAll("input, textarea").forEach((field) => { field.disabled = !isAttending; });
+  }
+
+  function refreshMainGuestName() {
+    const mainName = form.querySelector('[name="name"]')?.value.trim() || "";
+    const target = guestDetails?.querySelector("[data-main-guest-name]");
+    if (target) target.textContent = mainName || "—";
+  }
+
+  guestsInput?.addEventListener("input", renderGuestDetails);
+  form.querySelector('[name="name"]')?.addEventListener("input", refreshMainGuestName);
+  const attendingSelect = form.querySelector('[name="attending"]');
+  function updateGuestDetailsVisibility() {
+    const isAttending = attendingSelect?.value === "yes";
+    if (guestDetails) guestDetails.hidden = !isAttending;
+    guestDetails?.querySelectorAll("input, textarea").forEach((field) => {
+      field.disabled = !isAttending;
+    });
+  }
+  attendingSelect?.addEventListener("change", updateGuestDetailsVisibility);
+  renderGuestDetails();
+  updateGuestDetailsVisibility();
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -582,11 +674,30 @@ function setupRsvp() {
     if (!["yes", "no"].includes(attendingValue)) { message.textContent = getTranslation("rsvpError"); return; }
     const attending = attendingValue === "yes";
     const guests = Number.parseInt(data.get("guests"), 10);
-    const dietaryOptions = [...form.querySelectorAll('input[name="dietaryOptions"]:checked')].map((input) => input.value);
-    const dietaryDetails = String(data.get("dietaryDetails") || "").trim();
-    const dietary = [...dietaryOptions, dietaryDetails].filter(Boolean).join(" | ");
     if (!name) { message.textContent = getTranslation("rsvpError"); return; }
     if (!Number.isInteger(guests) || guests < 1 || guests > 10) { message.textContent = getTranslation("rsvpGuestsError"); return; }
+
+    const guestCards = [...guestDetails.querySelectorAll(".rsvp-guest-card")];
+    const guestDetailsPayload = guestCards.map((card, index) => {
+      const personName = index === 0
+        ? name
+        : String(card.querySelector('[name="companionName"]')?.value || "").trim();
+      const dietary = [...card.querySelectorAll('input[name="guestDietary"]:checked')].map((input) => input.value);
+      const dietaryText = String(card.querySelector('[name="guestDietaryDetails"]')?.value || "").trim();
+      const guestType = String(card.querySelector('[name="guestType"]')?.value || "adult");
+      return { first_name: personName, dietary, dietary_details: dietaryText, guest_type: guestType };
+    });
+    if (guestDetailsPayload.slice(1).some((person) => !person.first_name)) {
+      message.textContent = getTranslation("rsvpError");
+      return;
+    }
+
+    const summaryParts = guestDetailsPayload.map((person) => {
+      const needs = [...person.dietary, person.dietary_details].filter(Boolean);
+      return `${person.first_name}: ${needs.length ? needs.join(", ") : "none"}`;
+    });
+    const dietarySummary = summaryParts.join(" | ");
+
     try {
       const localKey = `rsvpSubmitted:${EVENT.id}:${name.toLocaleLowerCase().trim()}`;
       if (localStorage.getItem(localKey)) {
@@ -596,7 +707,14 @@ function setupRsvp() {
     } catch (_) {}
     submitButton.disabled = true; message.textContent = getTranslation("rsvpSending");
     try {
-      const { error } = await supabaseClient.from("rsvps").insert({ event_id: EVENT.id, name, attending, guests: attending ? guests : 0, dietary: dietary || null });
+      const { error } = await supabaseClient.from("rsvps").insert({
+        event_id: EVENT.id,
+        name,
+        attending,
+        guests: attending ? guests : 0,
+        dietary: attending ? (dietarySummary || null) : null,
+        guest_details: attending ? guestDetailsPayload : []
+      });
       if (error) {
         if (error.code === "23505") {
           message.textContent = getTranslation("rsvpDuplicate");
@@ -607,7 +725,9 @@ function setupRsvp() {
       }
       try { localStorage.setItem(`rsvpSubmitted:${EVENT.id}:${name.toLocaleLowerCase().trim()}`, "1"); } catch (_) {}
       message.textContent = getTranslation("rsvpSuccess").replace("{name}", name);
-      form.reset(); form.querySelector('[name="guests"]').value = "1";
+      form.reset();
+      form.querySelector('[name="guests"]').value = "1";
+      renderGuestDetails();
     } catch (error) { console.error(error); message.textContent = getTranslation("rsvpError"); }
     finally { submitButton.disabled = false; }
   });
